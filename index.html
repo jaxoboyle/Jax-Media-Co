@@ -471,39 +471,53 @@ a { text-decoration: none; }
 }
 .videos-sub { font-size:15px; color:var(--text2); }
 
-.video-featured {
-  border-radius:var(--r2); overflow:hidden;
-  border:1px solid var(--border);
-  box-shadow:0 4px 32px rgba(0,0,0,0.35);
-  margin-bottom:14px; background:#111;
-  transition:transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s;
+/* Responsive iframe wrapper — 9:16 for Shorts */
+.yt-wrap {
+  position: relative; width: 100%; height: 0;
+  padding-bottom: 177.78%; /* 9:16 aspect ratio */
+  background: #111; overflow: hidden;
 }
-.video-featured:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,0.50); }
-.vf-video { width:100%; height:auto; display:block; }
+.yt-wrap iframe {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+/* Featured video — centered narrow card for vertical Shorts */
+.video-featured {
+  border-radius: var(--r2); overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.35);
+  margin: 0 auto 14px;
+  max-width: 380px;           /* vertical Short — keep it portrait-sized */
+  background: #111;
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s;
+}
+.video-featured:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.50); }
 .vf-meta-bar {
-  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-  padding:16px 22px; background:var(--bg2);
-  border-top:1px solid var(--border);
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 14px 18px; background: var(--bg2);
+  border-top: 1px solid var(--border);
 }
 .vf-tag {
-  font-size:10px; font-weight:700; color:var(--blue); text-transform:uppercase;
-  letter-spacing:0.10em; background:rgba(58,123,255,0.10);
-  padding:3px 10px; border-radius:100px; white-space:nowrap;
+  font-size: 10px; font-weight: 700; color: var(--blue); text-transform: uppercase;
+  letter-spacing: 0.10em; background: rgba(58,123,255,0.10);
+  padding: 3px 10px; border-radius: 100px; white-space: nowrap;
 }
-.vf-title { font-family:'Outfit',sans-serif; font-size:15px; font-weight:700; color:var(--text); }
+.vf-title { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
 
-.video-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+/* Row — two vertical Shorts side by side */
+.video-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 780px; margin: 0 auto; }
 .v-card {
-  border-radius:var(--r); overflow:hidden;
-  border:1px solid var(--border); background:var(--bg2);
-  box-shadow:0 2px 16px rgba(0,0,0,0.25);
-  transition:transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s;
+  border-radius: var(--r); overflow: hidden;
+  border: 1px solid var(--border); background: var(--bg2);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s;
 }
-.v-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,0.40); }
-.v-card video { width:100%; display:block; background:#111; }
-.v-info { padding:14px 16px; }
-.v-tag { font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--blue); margin-bottom:4px; font-weight:600; }
-.v-title { font-size:14px; font-weight:600; color:var(--text); line-height:1.45; }
+.v-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.40); }
+.v-info { padding: 14px 16px; }
+.v-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 4px; font-weight: 600; }
+.v-title { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.45; }
 
 /* ══════════════════════════════
    PROCESS  (#1c1c24)
@@ -1146,32 +1160,47 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
     </div>
 
     <div class="video-featured reveal d1">
-      <video class="vf-video" controls playsinline preload="metadata">
-        <source src="video-1.mp4" type="video/mp4">
-      </video>
+      <div class="yt-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/uVA9u4gLvig"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
       <div class="vf-meta-bar">
         <span class="vf-tag">Featured</span>
-        <div class="vf-title">Modern Diesel — Shop Content</div>
+        <div class="vf-title">Hutch's Civic Ad</div>
       </div>
     </div>
 
     <div class="video-row reveal d2">
       <div class="v-card">
-        <video controls playsinline preload="metadata">
-          <source src="video-2.mp4" type="video/mp4">
-        </video>
+        <div class="yt-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/drrsrWqLd2I"
+            title="YouTube video player"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
         <div class="v-info">
           <div class="v-tag">Ad Campaign</div>
-          <div class="v-title">Hutch's Civic — Ad Campaign</div>
+          <div class="v-title">Hutch's Before &amp; After Transformation</div>
         </div>
       </div>
       <div class="v-card">
-        <video controls playsinline preload="metadata">
-          <source src="video-3.mp4" type="video/mp4">
-        </video>
+        <div class="yt-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/h4F1IyoT9OE"
+            title="YouTube video player"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
         <div class="v-info">
           <div class="v-tag">Before &amp; After</div>
-          <div class="v-title">Hutch's Civic — Before &amp; After Transformation</div>
+          <div class="v-title">Modern Diesel &amp; Performance Campaign Ad</div>
         </div>
       </div>
     </div>
