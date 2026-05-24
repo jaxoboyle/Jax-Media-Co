@@ -1309,11 +1309,11 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Name</label>
-              <input type="text" class="form-input" placeholder="Your name" required />
+              <input type="text" id="f_name" class="form-input" placeholder="Your name" required />
             </div>
             <div class="form-group">
               <label class="form-label">Business Name</label>
-              <input type="text" class="form-input" placeholder="Your business" required />
+              <input type="text" id="f_business" class="form-input" placeholder="Your business" required />
             </div>
           </div>
 
@@ -1321,18 +1321,18 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Email</label>
-              <input type="email" class="form-input" placeholder="your@email.com" required />
+              <input type="email" id="f_email" class="form-input" placeholder="your@email.com" required />
             </div>
             <div class="form-group">
               <label class="form-label">Phone Number</label>
-              <input type="tel" class="form-input" placeholder="(555) 000-0000" />
+              <input type="tel" id="f_phone" class="form-input" placeholder="(555) 000-0000" />
             </div>
           </div>
 
           <!-- Type of business -->
           <div class="form-group">
             <label class="form-label">What type of business do you run?</label>
-            <input type="text" class="form-input" placeholder="e.g. Auto shop, contractor, diesel performance, retail…" />
+            <input type="text" id="f_biztype" class="form-input" placeholder="e.g. Auto shop, contractor, diesel performance, retail…" />
           </div>
 
           <!-- What are you looking for -->
@@ -1365,7 +1365,7 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
           <!-- Biggest issue -->
           <div class="form-group">
             <label class="form-label">What's your biggest issue right now online?</label>
-            <input type="text" class="form-input" placeholder="Tell me what's not working for you…" />
+            <input type="text" id="f_issue" class="form-input" placeholder="Tell me what's not working for you…" />
           </div>
 
           <!-- Run ads -->
@@ -1386,7 +1386,7 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
           <!-- Message -->
           <div class="form-group">
             <label class="form-label">Anything else you'd like me to know?</label>
-            <textarea class="form-textarea" placeholder="Optional — anything that helps me understand your situation better." rows="4"></textarea>
+            <textarea id="f_message" class="form-textarea" placeholder="Optional — anything that helps me understand your situation better." rows="4"></textarea>
           </div>
 
           <button type="submit" class="form-submit">
@@ -1620,13 +1620,59 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 // ── FORM SUBMISSION ──
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Sent! I\'ll be in touch soon.';
-  btn.style.background = '#2a9d5c';
-  btn.style.animation  = 'none';
-  btn.disabled = true;
+  const form = e.target;
+  const btn  = form.querySelector('.form-submit');
+
+  // Collect all field values
+  const payload = {
+    name:         document.getElementById('f_name').value.trim(),
+    business_name: document.getElementById('f_business').value.trim(),
+    email:        document.getElementById('f_email').value.trim(),
+    phone:        document.getElementById('f_phone').value.trim(),
+    business_type: document.getElementById('f_biztype').value.trim(),
+    services:     [...form.querySelectorAll('input[name="services"]:checked')].map(el => el.value),
+    biggest_issue: document.getElementById('f_issue').value.trim(),
+    runs_ads:     (form.querySelector('input[name="ads"]:checked') || {}).value || '',
+    message:      document.getElementById('f_message').value.trim(),
+  };
+
+  // Loading state
+  const origText = btn.textContent;
+  btn.textContent = 'Sending…';
+  btn.disabled    = true;
+  btn.style.animation = 'none';
+
+  try {
+    const res = await fetch(
+      'https://services.leadconnectorhq.com/hooks/1A4yMzkxVWwaedd8Ja4F/webhook-trigger/37ac72d7-1d91-42cd-9cd6-37d530616784',
+      {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload),
+      }
+    );
+
+    if (!res.ok) throw new Error('Server error');
+
+    // Success state (same as original)
+    btn.textContent      = "Sent! I'll be in touch soon.";
+    btn.style.background = '#2a9d5c';
+
+  } catch (err) {
+    // Error state — re-enable so they can retry
+    btn.textContent      = 'Something went wrong. Please try again.';
+    btn.style.background = '#c0392b';
+    btn.style.animation  = 'none';
+    btn.disabled         = false;
+    // Reset button after 4 s
+    setTimeout(() => {
+      btn.textContent      = origText;
+      btn.style.background = '';
+      btn.style.animation  = '';
+    }, 4000);
+  }
 }
 </script>
 
