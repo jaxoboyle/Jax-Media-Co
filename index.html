@@ -3,832 +3,197 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jax Media Co — Content, Ads & Branding for Local Businesses</title>
-<meta name="description" content="Helping local businesses grow through content creation, landing pages, and Meta ads." />
+<title>Jax Media Co — More Calls & Booked Jobs for Local Service Businesses</title>
+<meta name="description" content="Jax Media Co helps local service businesses — plumbers, HVAC, diesel, roofing, contractors — get more calls and booked jobs through content, Meta ads, and landing pages." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#111118;color:#e4e6f0;overflow-x:hidden;line-height:1.6;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;}
+:root{
+  --bg:#111118;
+  --bg2:#18181f;
+  --bg3:#141419;
+  --bg4:#20202c;
+  --border:rgba(255,255,255,0.08);
+  --border2:rgba(255,255,255,0.13);
+  --text:#e4e6f0;
+  --text2:rgba(228,230,240,0.60);
+  --text3:rgba(228,230,240,0.28);
+  --silver:#7a8ca0;
+  --blue:#3a7bff;
+  --r:12px;
+  --r2:18px;
+}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:2px;}
+.container{max-width:1080px;margin:0 auto;padding:0 24px;}
+.tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver);background:rgba(255,255,255,0.05);border:1px solid var(--border2);padding:5px 12px;border-radius:100px;margin-bottom:14px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:13px 24px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all 0.25s ease;white-space:nowrap;text-decoration:none;font-family:inherit;}
+.btn-white{background:#e4e6f0;color:#111118;}
+.btn-white:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 22px rgba(228,230,240,0.15);}
+.btn-ghost{background:transparent;color:rgba(228,230,240,0.65);border:1px solid rgba(255,255,255,0.18);}
+.btn-ghost:hover{color:#e4e6f0;border-color:rgba(255,255,255,0.32);background:rgba(255,255,255,0.06);}
+.btn-blue{background:var(--blue);color:#fff;animation:pulse 3s ease-in-out infinite;}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(58,123,255,0.35);filter:brightness(1.1);animation:none;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(58,123,255,0);}50%{box-shadow:0 0 0 8px rgba(58,123,255,0.12);}}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1);}
+.reveal.in{opacity:1;transform:none;}
+.d1{transition-delay:0.07s;}.d2{transition-delay:0.14s;}.d3{transition-delay:0.21s;}.d4{transition-delay:0.28s;}
 
-/* ── RESET ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: #1c1c24;
-  color: #e4e6f0;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-img { display: block; max-width: 100%; }
-a { text-decoration: none; }
+/* ─── NAV ─── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:14px 0;transition:all 0.3s ease;}
+#nav.solid{background:rgba(17,17,24,0.96);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid var(--border);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.nav-brand{display:flex;align-items:center;}
+.nav-logo{height:36px;width:auto;display:block;filter:brightness(1.05);}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;padding:6px 12px;border-radius:100px;color:rgba(228,230,240,0.52);transition:all 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#e4e6f0;background:rgba(255,255,255,0.07);}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.nav-ig{font-size:13px;font-weight:500;color:rgba(228,230,240,0.48);padding:6px 12px;border-radius:100px;border:1px solid rgba(255,255,255,0.11);transition:all 0.2s;}
+.nav-ig:hover{color:#e4e6f0;border-color:rgba(255,255,255,0.26);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:20px;height:1.5px;background:rgba(228,230,240,0.68);border-radius:1px;transition:all 0.3s;}
+.mob-nav{display:none;position:fixed;inset:0;z-index:899;background:rgba(13,13,18,0.97);backdrop-filter:blur(22px);flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;color:#e4e6f0;}
+.mob-nav a:hover{color:var(--blue);}
+.mob-close{position:absolute;top:18px;right:20px;background:none;border:none;color:rgba(228,230,240,0.32);font-size:22px;cursor:pointer;}
 
-/* ── VARIABLES — soft charcoal gray palette ── */
-:root {
-  --bg:        #1c1c24;   /* main section bg — soft charcoal        */
-  --bg2:       #21212b;   /* card / alternate section bg             */
-  --bg3:       #191920;   /* deeper section bg                       */
-  --bg4:       #2a2a36;   /* hover / active states                   */
-  --border:    rgba(255,255,255,0.08);
-  --border2:   rgba(255,255,255,0.15);
-  --text:      #e4e6f0;
-  --text2:     rgba(228,230,240,0.58);
-  --text3:     rgba(228,230,240,0.28);
-  --silver:    #8090aa;
-  --silver2:   #b0baca;
-  --blue:      #3a7bff;
-  --blue-glow: rgba(58,123,255,0.10);
-  --r:  14px;
-  --r2: 20px;
+/* ─── HERO ─── */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  padding:110px 24px 60px;
+  text-align:center;
+  background:var(--bg);
 }
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to bottom,transparent,#111118);pointer-events:none;z-index:3;}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px);background-size:68px 68px;mask-image:radial-gradient(ellipse 80% 80% at 50% 38%,black 0%,transparent 100%);}
+.hero-glow{position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);width:700px;height:360px;background:radial-gradient(ellipse at 50% 100%,rgba(58,123,255,0.055) 0%,transparent 65%);pointer-events:none;}
+.hero-content{position:relative;z-index:2;width:100%;max-width:720px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
 
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg3); }
-::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 2px; }
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--silver);background:rgba(255,255,255,0.05);border:1px solid var(--border2);padding:5px 14px;border-radius:100px;display:inline-block;margin-bottom:20px;animation:fadeUp 0.7s ease 0.1s both;}
+.hero-headline{font-family:'Outfit',sans-serif;font-size:clamp(30px,5.5vw,58px);font-weight:800;line-height:1.08;letter-spacing:-0.03em;color:#eef0f8;margin-bottom:14px;animation:fadeUp 0.8s ease 0.2s both;}
+.hero-subhead{font-size:clamp(15px,2vw,17px);color:rgba(228,230,240,0.72);max-width:480px;margin:0 auto 28px;line-height:1.65;font-weight:500;animation:fadeUp 0.8s ease 0.32s both;}
+.hero-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.44s both;}
 
-/* ── UTILITIES ── */
-.container { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+/* Stat bar */
+.hero-stats{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;margin-top:36px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  border-radius:14px;overflow:hidden;
+  flex-wrap:wrap;
+  animation:fadeUp 0.8s ease 0.56s both;
+}
+.hs-item{display:flex;flex-direction:column;align-items:center;padding:14px 24px;border-right:1px solid var(--border);flex:1;min-width:100px;}
+.hs-item:last-child{border-right:none;}
+.hs-num{font-family:'Outfit',sans-serif;font-size:clamp(18px,2.5vw,24px);font-weight:800;color:#e4e6f0;letter-spacing:-0.02em;line-height:1;}
+.hs-label{font-size:10px;color:rgba(228,230,240,0.38);margin-top:4px;text-transform:uppercase;letter-spacing:0.08em;}
 
-.tag {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--silver); background: var(--bg4);
-  border: 1px solid var(--border2); padding: 5px 14px; border-radius: 100px;
-  margin-bottom: 18px;
-}
-.tag-dark {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.12);
-  color: rgba(228,230,240,0.50);
-}
+/* ─── COMPANY ─── */
+#company{padding:64px 0;background:var(--bg2);border-top:1px solid var(--border);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+.section-label{display:inline-flex;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver);background:rgba(255,255,255,0.05);border:1px solid var(--border2);padding:4px 12px;border-radius:100px;margin-bottom:14px;}
+.section-h{font-family:'Outfit',sans-serif;font-size:clamp(21px,3vw,34px);font-weight:800;line-height:1.15;letter-spacing:-0.03em;color:var(--text);margin-bottom:14px;}
+.section-body{font-size:14px;color:var(--text2);line-height:1.82;margin-bottom:8px;}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
+.photo-card{border-radius:var(--r2);overflow:hidden;border:1px solid var(--border);box-shadow:0 14px 48px rgba(0,0,0,0.48);aspect-ratio:4/3;background:#0d0d12;width:100%;}
+.photo-card img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;transition:transform 0.6s cubic-bezier(0.22,1,0.36,1);}
+.photo-card:hover img{transform:scale(1.03);}
 
-/* ── BUTTONS ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 13px 28px; border-radius: 100px;
-  font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
-  cursor: pointer; border: none; transition: all 0.3s ease;
-  white-space: nowrap; text-decoration: none;
-}
-/* Light button — high contrast on dark sections */
-.btn-white { background: #e4e6f0; color: #111118; }
-.btn-white:hover { background: #f0f2ff; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(228,230,240,0.18); }
-/* Outline — on dark hero / cta */
-.btn-outline {
-  background: transparent; color: rgba(228,230,240,0.68);
-  border: 1px solid rgba(255,255,255,0.20);
-}
-.btn-outline:hover { color: #e4e6f0; border-color: rgba(255,255,255,0.38); background: rgba(255,255,255,0.07); transform: translateY(-1px); }
-/* Blue — CTA primary */
-.btn-blue {
-  background: var(--blue); color: #fff;
-  animation: btnPulse 3s ease-in-out infinite;
-}
-.btn-blue:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(58,123,255,0.38); filter: brightness(1.1); animation: none; }
+/* ─── SERVICES ─── */
+#services{padding:56px 0;background:var(--bg3);border-top:1px solid var(--border);}
+.svc-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px;}
+.svc-item{background:var(--bg4);border:1px solid var(--border);border-radius:var(--r);padding:18px 18px;transition:all 0.25s cubic-bezier(0.22,1,0.36,1);cursor:default;}
+.svc-item:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.30);border-color:rgba(58,123,255,0.22);}
+.svc-emoji{font-size:20px;margin-bottom:10px;display:block;}
+.svc-name{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;}
+.svc-desc{font-size:12px;color:var(--text2);line-height:1.60;}
 
-@keyframes btnPulse {
-  0%, 100% { box-shadow: 0 0 0 0   rgba(58,123,255,0); }
-  50%       { box-shadow: 0 0 0 10px rgba(58,123,255,0.14); }
-}
+/* ─── FOUNDER ─── */
+#founder{padding:64px 0;background:var(--bg2);border-top:1px solid var(--border);}
+.founder-img-card{border-radius:var(--r2);overflow:hidden;aspect-ratio:3/4;background:#0a0a10;border:1px solid rgba(255,255,255,0.06);box-shadow:0 16px 52px rgba(0,0,0,0.55);width:100%;}
+.founder-img-card::before{content:'';display:none;}
+.founder-img-card img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;filter:contrast(1.06) brightness(0.94);transition:transform 0.6s cubic-bezier(0.22,1,0.36,1);}
+.founder-img-card:hover img{transform:scale(1.03);}
+.founder-quote{margin-top:18px;padding:16px 18px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:var(--r);border-left:3px solid var(--blue);}
+.founder-quote p{font-size:13px;color:var(--text2);line-height:1.70;font-style:italic;}
 
-/* ── REVEAL ── */
-.reveal {
-  opacity: 0; transform: translateY(22px);
-  transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
-}
-.reveal.in { opacity: 1; transform: translateY(0); }
-.reveal.d1 { transition-delay: 0.08s; }
-.reveal.d2 { transition-delay: 0.16s; }
-.reveal.d3 { transition-delay: 0.24s; }
-.reveal.d4 { transition-delay: 0.32s; }
+/* ─── VIDEOS ─── */
+#videos{padding:56px 0;background:var(--bg3);border-top:1px solid var(--border);}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:960px;margin:0 auto;}
+.v-card{border-radius:var(--r2);overflow:hidden;border:1px solid var(--border);background:var(--bg4);box-shadow:0 4px 20px rgba(0,0,0,0.30);transition:transform 0.3s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s;}
+.v-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(0,0,0,0.42);}
+.yt-wrap{position:relative;width:100%;height:0;padding-bottom:177.78%;background:#0a0a0f;overflow:hidden;}
+.yt-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.v-meta{padding:11px 14px;background:var(--bg4);}
+.v-badge{font-size:9px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.10em;background:rgba(58,123,255,0.10);padding:3px 9px;border-radius:100px;display:inline-block;margin-bottom:5px;}
+.v-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:var(--text);line-height:1.4;}
 
-/* ══════════════════════════════
-   NAV
-══════════════════════════════ */
-#nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-  padding: 20px 0;
-  transition: all 0.35s ease;
-}
-#nav .nav-brand    { color: rgba(228,230,240,0.92); }
-#nav .nav-links a  { color: rgba(228,230,240,0.60); }
-#nav .nav-links a:hover { color: #e4e6f0; background: rgba(255,255,255,0.08); }
-#nav .nav-ig       { color: rgba(228,230,240,0.60); border-color: rgba(255,255,255,0.16); }
-#nav .nav-ig:hover { color: #e4e6f0; border-color: rgba(255,255,255,0.32); }
-#nav .hamburger span { background: rgba(228,230,240,0.78); }
-#nav .btn-white    { background: rgba(255,255,255,0.12); color: #e4e6f0; border: 1px solid rgba(255,255,255,0.22); }
-#nav .btn-white:hover { background: rgba(255,255,255,0.22); }
+/* ─── CTA ─── */
+#cta{padding:64px 0;background:var(--bg);position:relative;overflow:hidden;border-top:1px solid var(--border);}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:360px;background:radial-gradient(ellipse,rgba(58,123,255,0.065) 0%,transparent 65%);pointer-events:none;}
+.cta-wrap{position:relative;z-index:1;max-width:540px;}
+.cta-h{font-family:'Outfit',sans-serif;font-size:clamp(26px,4.5vw,48px);font-weight:800;letter-spacing:-0.03em;color:#eef0f8;line-height:1.1;margin-bottom:10px;}
+.cta-h span{color:#8da8cc;}
+.cta-sub{font-size:15px;color:rgba(228,230,240,0.50);line-height:1.68;margin-bottom:24px;max-width:420px;}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+.trust-row{display:flex;flex-wrap:wrap;gap:14px;}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(228,230,240,0.28);}
+.trust-dot{width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;}
 
-/* Scrolled: dark charcoal frosted glass */
-#nav.solid {
-  background: rgba(25,25,32,0.94);
-  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 13px 0;
-}
-#nav.solid .nav-brand    { color: #e4e6f0; }
-#nav.solid .nav-links a  { color: rgba(228,230,240,0.60); }
-#nav.solid .nav-links a:hover { color: #e4e6f0; background: rgba(255,255,255,0.07); }
-#nav.solid .nav-ig       { color: rgba(228,230,240,0.60); border-color: rgba(255,255,255,0.12); }
-#nav.solid .nav-ig:hover { color: #e4e6f0; border-color: rgba(255,255,255,0.24); }
-#nav.solid .hamburger span { background: rgba(228,230,240,0.70); }
-#nav.solid .btn-white    { background: rgba(255,255,255,0.10); color: #e4e6f0; border: 1px solid rgba(255,255,255,0.18); }
-#nav.solid .btn-white:hover { background: rgba(255,255,255,0.18); }
+/* ─── FOOTER ─── */
+footer{background:var(--bg3);border-top:1px solid var(--border);padding:24px 0 18px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--text);}
+.footer-brand span{color:var(--text3);}
+.footer-links{display:flex;gap:14px;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:var(--text3);transition:color 0.2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-copy{font-size:11px;color:var(--text3);}
 
-.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.nav-brand {
-  font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 700;
-  letter-spacing: -0.01em; transition: color 0.35s;
-}
-.nav-brand span { font-weight: 600; opacity: 0.50; }
-.nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
-.nav-links a { font-size: 13px; font-weight: 500; padding: 7px 14px; border-radius: 100px; transition: all 0.2s; }
-.nav-right { display: flex; align-items: center; gap: 10px; }
-.nav-ig { font-size: 13px; font-weight: 500; padding: 7px 14px; border-radius: 100px; transition: all 0.2s; border: 1px solid transparent; }
-
-.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
-.hamburger span { display: block; width: 22px; height: 1.5px; border-radius: 1px; transition: all 0.3s; }
-
-.mob-nav {
-  display: none; position: fixed; inset: 0; z-index: 899;
-  background: rgba(22,22,30,0.97); backdrop-filter: blur(20px);
-  flex-direction: column; align-items: center; justify-content: center; gap: 18px;
-}
-.mob-nav.open { display: flex; }
-.mob-nav a { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 700; color: #e4e6f0; transition: color 0.2s; }
-.mob-nav a:hover { color: var(--blue); }
-.mob-close { position: absolute; top: 22px; right: 24px; background: none; border: none; color: rgba(228,230,240,0.38); font-size: 24px; cursor: pointer; }
-
-/* ══════════════════════════════
-   HERO  (darkest — #111118)
-══════════════════════════════ */
-#hero {
-  min-height: 100vh;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-  padding: 120px 0 100px;
-  text-align: center;
-  background: #111118;
-}
-/* Gradient fade from hero into first below-fold section */
-#hero::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 160px;
-  background: linear-gradient(to bottom, transparent, #1c1c24);
-  pointer-events: none; z-index: 3;
-}
-
-.hero-glow {
-  position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
-  width: 900px; height: 500px;
-  background: radial-gradient(ellipse at 50% 100%, rgba(58,123,255,0.07) 0%, transparent 70%);
-  pointer-events: none; will-change: transform;
-}
-.hero-grid {
-  position: absolute; inset: 0; pointer-events: none; will-change: transform;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, black 20%, transparent 100%);
-}
-
-.hero-content { position: relative; z-index: 2; }
-
-/* ── Logo ── */
-.logo-wrap { position: relative; display: inline-block; margin-bottom: 44px; }
-
-@keyframes logoRise {
-  0%   { opacity: 0; transform: translateY(80px) scale(0.90); filter: brightness(0.5); }
-  40%  { opacity: 0.7; }
-  100% { opacity: 1; transform: translateY(0) scale(1); filter: brightness(1.08); }
-}
-@keyframes logoFloat {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
-}
-@keyframes logoSheen {
-  0%   { background-position: -200% center; }
-  100% { background-position:  200% center; }
-}
-@keyframes sheenFadeIn { to { opacity: 1; } }
-
-.logo-img {
-  display: block;
-  width: clamp(240px, 34vw, 420px);
-  max-width: 100%; height: auto;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  animation: logoRise 1.6s cubic-bezier(0.22,1,0.36,1) both,
-             logoFloat 5.5s ease-in-out 1.6s infinite;
-  cursor: default;
-  filter: drop-shadow(0 4px 28px rgba(0,0,0,0.50))
-          drop-shadow(0 0 24px rgba(100,160,255,0.12))
-          contrast(1.05) brightness(1.06);
-  transition: filter 0.45s ease;
-  will-change: transform, filter;
-}
-.logo-img:hover {
-  filter: drop-shadow(0 8px 40px rgba(0,0,0,0.60))
-          drop-shadow(0 0 48px rgba(100,160,255,0.24))
-          contrast(1.05) brightness(1.15);
-  animation-play-state: paused, paused;
-}
-.logo-wrap::after {
-  content: ''; position: absolute; inset: 0; border-radius: 8px;
-  background: linear-gradient(105deg,transparent 35%,rgba(255,255,255,0.05) 47%,rgba(255,255,255,0.10) 50%,rgba(255,255,255,0.05) 53%,transparent 65%);
-  background-size: 300% 100%; pointer-events: none;
-  animation: logoSheen 4.5s ease-in-out 2.5s infinite; opacity: 0; animation-fill-mode: both;
-}
-.logo-wrap { animation: sheenFadeIn 0.01s ease 2.5s both; }
-.logo-glow {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  width: 110%; height: 55%;
-  background: radial-gradient(ellipse, rgba(80,130,255,0.06) 0%, transparent 70%);
-  pointer-events: none;
-  animation: logoRise 1.6s cubic-bezier(0.22,1,0.36,1) both;
-}
-
-/* Smoke */
-.smoke-wrap { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 100%; pointer-events: none; z-index: 3; }
-.smoke {
-  position: absolute; border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,210,230,0.22) 0%, rgba(170,180,200,0.08) 50%, transparent 70%);
-  filter: blur(12px);
-  animation: smokeRise var(--dur,4s) ease-in-out var(--delay,0s) infinite; opacity: 0;
-}
-.smoke-1 { width:44px; height:44px; left:33%;  top:0;    --dur:4.8s; --delay:1.8s; }
-.smoke-2 { width:30px; height:30px; left:35%;  top:4px;  --dur:3.9s; --delay:2.8s; }
-.smoke-5 { width:52px; height:52px; left:31%;  top:-6px; --dur:5.5s; --delay:0.9s; }
-.smoke-3 { width:44px; height:44px; right:33%; top:0;    --dur:4.4s; --delay:2.3s; }
-.smoke-4 { width:30px; height:30px; right:35%; top:4px;  --dur:3.6s; --delay:3.4s; }
-.smoke-6 { width:52px; height:52px; right:31%; top:-6px; --dur:5.2s; --delay:1.5s; }
-@keyframes smokeRise {
-  0%   { opacity:0;    transform:translateY(0)     scale(0.4); }
-  15%  { opacity:0.45; }
-  70%  { opacity:0.12; transform:translateY(-55px) scale(1.6); }
-  100% { opacity:0;    transform:translateY(-90px) scale(2.4); }
-}
-
-@media(max-width:768px){ .logo-img { width:clamp(200px,70vw,340px); } }
-@media(max-width:480px){ .logo-img { width:clamp(180px,80vw,280px); } }
-
-.hero-headline {
-  font-family:'Outfit',sans-serif; font-size:clamp(30px,5vw,58px);
-  font-weight:800; line-height:1.1; letter-spacing:-0.03em;
-  color:#e4e6f0; margin-bottom:16px;
-  animation: fadeUp 1s ease 0.6s both;
-}
-.hero-headline em { font-style:normal; color:#a8b8d8; }
-.hero-sub {
-  font-size:clamp(15px,2vw,17px); color:rgba(228,230,240,0.50);
-  max-width:500px; margin:0 auto 34px; line-height:1.7;
-  animation: fadeUp 1s ease 0.75s both;
-}
-.hero-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; animation: fadeUp 1s ease 0.9s both; }
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(20px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-
-.hero-rule {
-  display:flex; align-items:center; justify-content:center; gap:40px;
-  margin-top:60px; padding-top:32px;
-  border-top:1px solid rgba(255,255,255,0.10);
-  flex-wrap:wrap; animation: fadeUp 1s ease 1.1s both;
-}
-.hero-stat-num { font-family:'Outfit',sans-serif; font-size:26px; font-weight:800; color:#e4e6f0; letter-spacing:-0.03em; line-height:1; }
-.hero-stat-label { font-size:12px; color:rgba(228,230,240,0.28); margin-top:4px; letter-spacing:0.04em; }
-.hero-rule-div { width:1px; height:30px; background:rgba(255,255,255,0.10); }
-
-/* ══════════════════════════════
-   ABOUT  (#1c1c24 — soft charcoal)
-══════════════════════════════ */
-#about { padding: 96px 0; background: var(--bg); }
-.about-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
-
-.about-visual-block {
-  background: var(--bg2); border-radius: var(--r2);
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.28);
-  padding: 32px;
-  position: relative; overflow: hidden;
-  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s;
-}
-.about-visual-block:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,0.38); }
-.about-visual-block::before {
-  content:''; position:absolute; top:-60px; right:-60px; width:180px; height:180px;
-  background:radial-gradient(circle, rgba(58,123,255,0.07) 0%, transparent 70%);
-  pointer-events:none;
-}
-.about-chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; }
-.chip {
-  background:var(--bg4); border:1px solid var(--border); border-radius:100px;
-  padding:7px 14px; font-size:12px; font-weight:500; color:var(--text2);
-  display:flex; align-items:center; gap:6px; transition:all 0.2s; cursor:default;
-}
-.chip:hover { border-color:var(--border2); color:var(--text); transform:translateY(-1px); }
-.about-divider { height:1px; background:var(--border); margin:18px 0; }
-.about-stat-row { display:flex; gap:28px; }
-.about-s-num { font-family:'Outfit',sans-serif; font-size:24px; font-weight:800; color:var(--text); }
-.about-s-label { font-size:12px; color:var(--text3); margin-top:3px; }
-
-.about-headline {
-  font-family:'Outfit',sans-serif; font-size:clamp(26px,3.5vw,42px);
-  font-weight:800; line-height:1.15; letter-spacing:-0.03em;
-  color:var(--text); margin-bottom:18px;
-}
-.about-headline span { color:var(--blue); }
-.about-body { font-size:15px; color:var(--text2); line-height:1.8; margin-bottom:12px; }
-
-/* ══════════════════════════════
-   RESULTS  (#191920 — deeper charcoal)
-══════════════════════════════ */
-#results {
-  padding: 96px 0;
-  background: var(--bg3);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.results-header { margin-bottom: 44px; }
-.results-headline {
-  font-family:'Outfit',sans-serif; font-size:clamp(26px,4vw,48px);
-  font-weight:800; letter-spacing:-0.03em; color:var(--text); margin-bottom:10px;
-}
-.results-sub { font-size:15px; color:var(--text2); }
-
-.r-tabs { display:flex; gap:6px; margin-bottom:32px; }
-.r-tab {
-  padding:9px 20px; border-radius:100px; font-size:13px; font-weight:600;
-  cursor:pointer; border:1px solid var(--border); background:var(--bg4);
-  color:var(--text2); transition:all 0.25s;
-}
-.r-tab.on { background: #e4e6f0; color: #111118; border-color: #e4e6f0; box-shadow: 0 4px 16px rgba(0,0,0,0.30); }
-.r-tab:hover:not(.on) { border-color:var(--border2); color:var(--text); }
-
-.r-panel { display:none; }
-.r-panel.on { display:block; }
-
-.c-header {
-  display:flex; align-items:flex-start; justify-content:space-between;
-  gap:20px; flex-wrap:wrap;
-  padding:22px 26px; background:var(--bg2);
-  border-radius:var(--r2) var(--r2) 0 0;
-  border:1px solid var(--border); border-bottom:none;
-}
-.c-name { font-family:'Outfit',sans-serif; font-size:19px; font-weight:800; color:var(--text); }
-.c-meta { font-size:13px; color:var(--text3); margin-top:3px; }
-.c-badge {
-  background:var(--bg4); border:1px solid var(--border2);
-  font-size:12px; font-weight:600; color:var(--silver);
-  padding:5px 14px; border-radius:100px; white-space:nowrap; align-self:flex-start;
-}
-
-.m-grid {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  border:1px solid var(--border); border-top:none;
-  border-radius:0 0 var(--r2) var(--r2); overflow:hidden;
-}
-.m-cell {
-  padding:22px 18px;
-  border-right:1px solid var(--border); border-bottom:1px solid var(--border);
-  background:var(--bg2); transition:background 0.2s; cursor:default; min-width:0;
-}
-.m-cell:hover { background:var(--bg4); }
-.m-cell:nth-child(3n) { border-right:none; }
-.m-cell:nth-last-child(-n+3) { border-bottom:none; }
-.m-cell.hero-cell { background: #252535; }
-.m-cell.hero-cell:hover { background: #2a2a3c; }
-.m-icon { font-size:16px; margin-bottom:8px; }
-.m-val {
-  font-family:'Outfit',sans-serif; font-size:clamp(20px,3vw,30px);
-  font-weight:800; color:var(--text); line-height:1.1; letter-spacing:-0.02em;
-  word-break:break-word; hyphens:auto;
-}
-.m-label { font-size:11px; color:var(--text3); margin-top:5px; text-transform:uppercase; letter-spacing:0.08em; }
-.m-note { font-size:12px; color:var(--silver); margin-top:3px; }
-
-.c-notes { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px; }
-.c-note-card {
-  background:var(--bg2); border:1px solid var(--border);
-  border-radius:var(--r); padding:16px 20px;
-}
-.c-note-label { font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text3); margin-bottom:6px; }
-.c-note-body { font-size:13px; color:var(--text2); line-height:1.6; }
-
-/* ══════════════════════════════
-   SERVICES  (#1c1c24)
-══════════════════════════════ */
-#services { padding: 96px 0; background: var(--bg); }
-.services-header { margin-bottom: 44px; }
-.services-headline {
-  font-family:'Outfit',sans-serif; font-size:clamp(26px,4vw,48px);
-  font-weight:800; letter-spacing:-0.03em; color:var(--text); margin-bottom:10px;
-}
-.services-sub { font-size:15px; color:var(--text2); }
-
-.svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-.svc-card {
-  background:var(--bg2); border:1px solid var(--border);
-  border-radius:var(--r2); padding:26px 22px;
-  transition:all 0.3s cubic-bezier(0.22,1,0.36,1); cursor:pointer;
-  position:relative; overflow:hidden;
-}
-.svc-card::before {
-  content:''; position:absolute; inset:0;
-  background:linear-gradient(135deg,rgba(58,123,255,0) 0%,rgba(58,123,255,0.05) 100%);
-  opacity:0; transition:opacity 0.3s;
-}
-.svc-card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(0,0,0,0.35); border-color:rgba(58,123,255,0.25); }
-.svc-card:hover::before { opacity:1; }
-.svc-card:hover .svc-more { max-height:80px; opacity:1; margin-top:12px; }
-.svc-card:hover .svc-arrow { transform:translateX(4px); color:var(--blue); }
-.svc-card:hover .svc-icon { transform:scale(1.15); }
-.svc-icon { display:inline-block; font-size:22px; margin-bottom:14px; transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1); }
-.svc-name {
-  font-family:'Outfit',sans-serif; font-size:15px; font-weight:700; color:var(--text);
-  display:flex; align-items:center; justify-content:space-between; margin-bottom:7px;
-}
-.svc-arrow { color:var(--text3); font-size:14px; transition:all 0.25s; }
-.svc-desc { font-size:13px; color:var(--text2); line-height:1.65; }
-.svc-more { max-height:0; opacity:0; overflow:hidden; transition:max-height 0.35s ease,opacity 0.35s ease,margin-top 0.35s ease; }
-.svc-tags { display:flex; flex-wrap:wrap; gap:6px; }
-.svc-tag { font-size:11px; color:var(--blue); background:rgba(58,123,255,0.10); border:1px solid rgba(58,123,255,0.18); padding:3px 10px; border-radius:100px; }
-
-/* ══════════════════════════════
-   VIDEOS  (#191920 — deeper)
-══════════════════════════════ */
-#videos {
-  padding: 96px 0;
-  background: var(--bg3);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.videos-header { margin-bottom:36px; }
-.videos-headline {
-  font-family:'Outfit',sans-serif; font-size:clamp(26px,4vw,48px);
-  font-weight:800; letter-spacing:-0.03em; color:var(--text); margin-bottom:10px;
-}
-.videos-sub { font-size:15px; color:var(--text2); }
-
-/* Responsive iframe wrapper — 9:16 for Shorts */
-.yt-wrap {
-  position: relative; width: 100%; height: 0;
-  padding-bottom: 177.78%; /* 9:16 aspect ratio */
-  background: #111; overflow: hidden;
-}
-.yt-wrap iframe {
-  position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%;
-  border: 0;
-}
-
-/* Featured video — centered narrow card for vertical Shorts */
-.video-featured {
-  border-radius: var(--r2); overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.35);
-  margin: 0 auto 14px;
-  max-width: 380px;           /* vertical Short — keep it portrait-sized */
-  background: #111;
-  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s;
-}
-.video-featured:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.50); }
-.vf-meta-bar {
-  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-  padding: 14px 18px; background: var(--bg2);
-  border-top: 1px solid var(--border);
-}
-.vf-tag {
-  font-size: 10px; font-weight: 700; color: var(--blue); text-transform: uppercase;
-  letter-spacing: 0.10em; background: rgba(58,123,255,0.10);
-  padding: 3px 10px; border-radius: 100px; white-space: nowrap;
-}
-.vf-title { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
-
-/* Row — two vertical Shorts side by side */
-.video-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 780px; margin: 0 auto; }
-.v-card {
-  border-radius: var(--r); overflow: hidden;
-  border: 1px solid var(--border); background: var(--bg2);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
-  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s;
-}
-.v-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.40); }
-.v-info { padding: 14px 16px; }
-.v-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 4px; font-weight: 600; }
-.v-title { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.45; }
-
-/* ══════════════════════════════
-   PROCESS  (#1c1c24)
-══════════════════════════════ */
-#process { padding:96px 0; background:var(--bg); }
-.process-headline {
-  font-family:'Outfit',sans-serif; font-size:clamp(26px,4vw,48px);
-  font-weight:800; letter-spacing:-0.03em; color:var(--text); margin-bottom:10px;
-}
-.process-sub { font-size:15px; color:var(--text2); margin-bottom:44px; }
-.process-steps { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
-.p-step {
-  background:var(--bg2); border:1px solid var(--border);
-  border-radius:var(--r2); padding:26px 18px;
-  transition:all 0.3s cubic-bezier(0.22,1,0.36,1); cursor:default;
-}
-.p-step:hover { transform:translateY(-5px); box-shadow:0 12px 32px rgba(0,0,0,0.35); border-color:rgba(58,123,255,0.20); }
-.p-num { font-family:'Outfit',sans-serif; font-size:11px; font-weight:700; color:var(--blue); letter-spacing:0.12em; margin-bottom:14px; opacity:0.70; }
-.p-name { font-size:14px; font-weight:700; color:var(--text); margin-bottom:7px; }
-.p-desc { font-size:12px; color:var(--text2); line-height:1.6; }
-
-/* ══════════════════════════════
-   CTA  (#111118 — darkest)
-══════════════════════════════ */
-#cta {
-  padding:96px 0;
-  background:#111118;
-  position:relative; overflow:hidden;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-.cta-glow {
-  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-  width:700px; height:500px;
-  background:radial-gradient(ellipse, rgba(58,123,255,0.08) 0%, transparent 70%);
-  pointer-events:none;
-}
-.cta-inner { position:relative; z-index:1; max-width:680px; }
-.cta-headline {
-  font-family:'Outfit',sans-serif; font-size:clamp(32px,5vw,60px);
-  font-weight:800; letter-spacing:-0.03em; color:#e4e6f0; line-height:1.08; margin-bottom:16px;
-}
-.cta-headline span { color:#a8b8d8; }
-.cta-sub { font-size:16px; color:rgba(228,230,240,0.50); line-height:1.7; margin-bottom:34px; max-width:480px; }
-.cta-btns { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:44px; }
-
-.trust-row { display:flex; flex-wrap:wrap; gap:20px; }
-.trust-item { display:flex; align-items:center; gap:8px; font-size:13px; color:rgba(228,230,240,0.35); }
-.trust-icon { font-size:13px; color:var(--blue); }
-
-/* Socials block */
-.socials-block {
-  margin-top:64px; padding-top:44px; border-top:1px solid rgba(255,255,255,0.08);
-  display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
-}
-.social-left-headline {
-  font-family:'Outfit',sans-serif; font-size:clamp(20px,3vw,34px);
-  font-weight:800; letter-spacing:-0.02em; color:#e4e6f0; margin-bottom:8px;
-}
-.social-left-sub { font-size:14px; color:rgba(228,230,240,0.38); margin-bottom:18px; }
-.social-handles { display:flex; flex-direction:column; gap:10px; }
-.social-link {
-  display:flex; align-items:center; gap:12px;
-  background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.09);
-  padding:12px 16px; border-radius:var(--r);
-  font-size:14px; font-weight:500; color:rgba(228,230,240,0.55);
-  transition:all 0.25s;
-}
-.social-link:hover { border-color:rgba(255,255,255,0.20); color:#e4e6f0; background:rgba(255,255,255,0.09); }
-.social-icon { font-size:18px; }
-
-.insta-mini-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
-.ig-tile {
-  aspect-ratio:1; border-radius:10px; overflow:hidden;
-  position:relative; cursor:pointer; background:#1c1c28;
-  transition:transform 0.3s cubic-bezier(0.22,1,0.36,1);
-}
-.ig-tile:hover { transform:scale(1.05); }
-.ig-tile-bg { position:absolute; inset:0; transition:transform 0.4s; }
-.ig-tile:hover .ig-tile-bg { transform:scale(1.08); }
-.ig-tile-overlay {
-  position:absolute; inset:0;
-  background:rgba(58,123,255,0.22); opacity:0; transition:opacity 0.3s;
-  display:flex; align-items:center; justify-content:center; font-size:20px;
-}
-.ig-tile:hover .ig-tile-overlay { opacity:1; }
-.ig-1 .ig-tile-bg{background:linear-gradient(135deg,#1a1a28,#252535);}
-.ig-2 .ig-tile-bg{background:linear-gradient(135deg,#0e1632,#1a2450);}
-.ig-3 .ig-tile-bg{background:linear-gradient(135deg,#1a1a10,#282810);}
-.ig-4 .ig-tile-bg{background:linear-gradient(135deg,#1a0e10,#281215);}
-.ig-5 .ig-tile-bg{background:linear-gradient(135deg,#0e1a18,#102820);}
-.ig-6 .ig-tile-bg{background:linear-gradient(135deg,#16101a,#221030);}
-.ig-label { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:4px; }
-.ig-label-icon { font-size:18px; opacity:0.32; }
-.ig-label-text { font-size:10px; color:rgba(255,255,255,0.20); font-weight:500; }
-
-/* ══════════════════════════════
-   BOOKING SECTION  (#21212b)
-══════════════════════════════ */
-#booking {
-  padding: 96px 0;
-  background: var(--bg2);
-  border-top: 1px solid var(--border);
-}
-.booking-header { margin-bottom: 48px; }
-.booking-headline {
-  font-family:'Outfit',sans-serif; font-size:clamp(26px,4vw,48px);
-  font-weight:800; letter-spacing:-0.03em; color:var(--text); margin-bottom:10px;
-}
-.booking-sub { font-size:15px; color:var(--text2); max-width:520px; }
-
-.booking-grid {
-  display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start;
-}
-
-/* Form card */
-.booking-form-wrap {
-  background: var(--bg); border: 1px solid var(--border);
-  border-radius: var(--r2); padding: 36px;
-}
-.booking-form { display: flex; flex-direction: column; gap: 0; }
-
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
-.form-group:last-child { margin-bottom: 0; }
-
-.form-label {
-  font-size: 12px; font-weight: 600; color: var(--text2);
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-input, .form-textarea, .form-select {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 12px 16px;
-  font-size: 14px; color: var(--text);
-  font-family: inherit; outline: none;
-  transition: border-color 0.25s, box-shadow 0.25s;
-  width: 100%;
-}
-.form-input::placeholder, .form-textarea::placeholder { color: var(--text3); }
-.form-input:hover, .form-textarea:hover { border-color: var(--border2); }
-.form-input:focus, .form-textarea:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(58,123,255,0.14);
-}
-.form-textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
-
-/* Check grid — "looking for help with" */
-.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.check-item {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 10px 14px;
-  cursor: pointer; transition: all 0.2s; user-select: none;
-}
-.check-item:hover { border-color: rgba(58,123,255,0.35); }
-.check-item input[type="checkbox"] { accent-color: var(--blue); width: 14px; height: 14px; flex-shrink: 0; cursor: pointer; }
-.check-item span { font-size: 13px; color: var(--text2); transition: color 0.2s; }
-.check-item:has(input:checked) { border-color: rgba(58,123,255,0.40); background: rgba(58,123,255,0.08); }
-.check-item:has(input:checked) span { color: var(--blue); }
-
-/* Radio row — "run ads?" */
-.radio-row { display: flex; gap: 10px; }
-.radio-item {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 10px 24px;
-  cursor: pointer; transition: all 0.2s; user-select: none; flex: 1; justify-content: center;
-}
-.radio-item:hover { border-color: rgba(58,123,255,0.35); }
-.radio-item input[type="radio"] { accent-color: var(--blue); width: 14px; height: 14px; flex-shrink: 0; cursor: pointer; }
-.radio-item span { font-size: 13px; color: var(--text2); transition: color 0.2s; }
-.radio-item:has(input:checked) { border-color: rgba(58,123,255,0.40); background: rgba(58,123,255,0.08); }
-.radio-item:has(input:checked) span { color: var(--blue); }
-
-/* Submit */
-.form-submit {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  width: 100%; padding: 15px 28px; border-radius: 100px;
-  background: var(--blue); color: #fff;
-  font-family: inherit; font-size: 15px; font-weight: 700;
-  border: none; cursor: pointer;
-  transition: all 0.3s ease;
-  animation: btnPulse 3s ease-in-out infinite;
-  margin-top: 4px;
-}
-.form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(58,123,255,0.38); filter: brightness(1.1); animation: none; }
-
-/* Info card */
-.booking-info {
-  position: sticky; top: 100px;
-  display: flex; flex-direction: column; gap: 14px;
-}
-.booking-info-card {
-  background: var(--bg); border: 1px solid var(--border);
-  border-radius: var(--r2); padding: 24px;
-  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
-}
-.booking-info-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.30); }
-.booking-info-icon { font-size: 22px; margin-bottom: 10px; }
-.booking-info-title { font-family:'Outfit',sans-serif; font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-.booking-info-body { font-size: 13px; color: var(--text2); line-height: 1.65; }
-.booking-divider { height: 1px; background: var(--border); }
-
-/* ══════════════════════════════
-   FOOTER  (#191920 — deep charcoal)
-══════════════════════════════ */
-footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px 0 24px; }
-.footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
-.footer-brand { font-family:'Outfit',sans-serif; font-size:15px; font-weight:700; color:var(--text); }
-.footer-brand span { color:var(--text3); }
-.footer-links { display:flex; gap:20px; list-style:none; flex-wrap:wrap; }
-.footer-links a { font-size:13px; color:var(--text3); transition:color 0.2s; }
-.footer-links a:hover { color:var(--text); }
-.footer-copy { font-size:12px; color:var(--text3); }
-
-/* ══════════════════════════════
-   SERVICE MODAL  (dark charcoal)
-══════════════════════════════ */
-.modal-backdrop {
-  display:none; position:fixed; inset:0; z-index:2000;
-  background:rgba(0,0,0,0); backdrop-filter:blur(0px); -webkit-backdrop-filter:blur(0px);
-  align-items:center; justify-content:center; padding:24px;
-  transition:background 0.28s ease,backdrop-filter 0.28s ease;
-}
-.modal-backdrop.is-visible { background:rgba(0,0,0,0.60); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
-.modal-box {
-  background: rgba(28,28,38,0.97);
-  backdrop-filter:blur(48px); -webkit-backdrop-filter:blur(48px);
-  border:1px solid rgba(255,255,255,0.10); border-radius:22px;
-  width:100%; max-width:540px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.60), 0 0 0 1px rgba(255,255,255,0.04) inset;
-  position:relative; overflow:hidden;
-  opacity:0; transform:translateY(20px) scale(0.97);
-  transition:opacity 0.3s cubic-bezier(0.22,1,0.36,1),transform 0.3s cubic-bezier(0.22,1,0.36,1);
-}
-.modal-backdrop.is-visible .modal-box { opacity:1; transform:translateY(0) scale(1); }
-.modal-box::before {
-  content:''; position:absolute; top:0; left:10%; right:10%; height:1px;
-  background:linear-gradient(90deg,transparent,rgba(58,123,255,0.30),transparent); pointer-events:none;
-}
-.modal-head {
-  display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-  padding:22px 22px 16px; border-bottom:1px solid rgba(255,255,255,0.08);
-}
-.modal-head-left { display:flex; align-items:center; gap:14px; min-width:0; }
-.modal-head-icon {
-  width:44px; height:44px; border-radius:12px; flex-shrink:0;
-  background:rgba(58,123,255,0.10); border:1px solid rgba(58,123,255,0.20);
-  display:flex; align-items:center; justify-content:center; font-size:20px;
-}
-.modal-title { font-family:'Outfit',sans-serif; font-size:18px; font-weight:700; color:#e4e6f0; letter-spacing:-0.01em; }
-.modal-subtitle { font-size:12px; color:rgba(228,230,240,0.38); margin-top:2px; }
-.modal-close {
-  flex-shrink:0; width:28px; height:28px; border-radius:50%;
-  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); color:rgba(228,230,240,0.38);
-  font-size:13px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s;
-}
-.modal-close:hover { background:rgba(255,255,255,0.12); color:#e4e6f0; }
-.modal-body { padding:20px 22px 6px; }
-.modal-desc { font-size:14px; color:rgba(228,230,240,0.58); line-height:1.75; margin-bottom:16px; }
-.modal-bullets { display:flex; flex-direction:column; gap:8px; margin-bottom:18px; }
-.modal-bullet { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:rgba(228,230,240,0.58); font-weight:500; line-height:1.5; }
-.modal-bullet::before { content:''; width:5px; height:5px; border-radius:50%; margin-top:6px; background:var(--blue); flex-shrink:0; }
-.modal-foot {
-  padding:12px 22px 18px;
-  display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
-  border-top:1px solid rgba(255,255,255,0.07); margin-top:4px;
-}
-.modal-foot-note { font-size:12px; color:rgba(228,230,240,0.30); }
-.modal-book-btn {
-  display:inline-flex; align-items:center; gap:7px;
-  padding:10px 22px; border-radius:100px;
-  background:#e4e6f0; color:#111118;
-  font-size:13px; font-weight:700; text-decoration:none;
-  box-shadow:0 4px 16px rgba(0,0,0,0.35);
-  transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);
-}
-.modal-book-btn:hover { background:#ffffff; transform:translateY(-2px) scale(1.03); box-shadow:0 8px 24px rgba(0,0,0,0.40); }
-.modal-book-btn svg { width:12px; height:12px; transition:transform 0.2s; }
-.modal-book-btn:hover svg { transform:translateX(2px); }
-
-/* ══════════════════════════════
-   RESPONSIVE
-══════════════════════════════ */
-@media(max-width:900px){
-  .about-inner{grid-template-columns:1fr;gap:36px;}
-  .process-steps{grid-template-columns:1fr 1fr;gap:12px;}
-  .socials-block{grid-template-columns:1fr;gap:36px;}
-  .svc-grid{grid-template-columns:1fr 1fr;gap:12px;}
-  .booking-grid{grid-template-columns:1fr;}
-  .booking-info{position:static;}
+/* ─── RESPONSIVE ─── */
+@media(max-width:880px){
   .nav-links,.nav-ig{display:none;}
   .hamburger{display:flex;}
+  .two-col{grid-template-columns:1fr;gap:30px;}
+  .two-col .photo-card{aspect-ratio:16/9;}
+  .two-col .photo-card img{object-position:center 30%;}
+  .founder-img-card{aspect-ratio:16/9;}
+  .founder-img-card img{object-position:center 20%;}
+  .svc-list{grid-template-columns:1fr 1fr;}
+  .video-grid{grid-template-columns:1fr 1fr;max-width:600px;}
+  .video-grid .v-card:last-child{grid-column:1/-1;max-width:320px;margin:0 auto;width:100%;}
 }
-@media(max-width:640px){
-  .m-grid{grid-template-columns:1fr 1fr;}
-  .m-cell:nth-child(2n){border-right:none;}
-  .m-cell:nth-child(3n){border-right:1px solid var(--border);}
-  .m-cell:nth-last-child(-n+2){border-bottom:none;}
-  .m-cell:nth-last-child(-n+3){border-bottom:1px solid var(--border);}
-  .video-row{grid-template-columns:1fr;}
-  .svc-grid{grid-template-columns:1fr;}
-  .process-steps{grid-template-columns:1fr;}
-  .c-notes{grid-template-columns:1fr;}
-  .hero-rule{gap:20px;}
-  .hero-rule-div{display:none;}
-  .cta-inner{max-width:100%;}
-  .form-row{grid-template-columns:1fr;}
-  .check-grid{grid-template-columns:1fr;}
-  .booking-form-wrap{padding:24px;}
+@media(max-width:560px){
+  #hero{padding:90px 20px 52px;}
+  .hero-stats{border-radius:10px;}
+  .hs-item{padding:11px 14px;min-width:80px;}
+  .hs-num{font-size:18px;}
+  .svc-list{grid-template-columns:1fr;}
+  .video-grid{grid-template-columns:1fr;max-width:340px;}
+  .video-grid .v-card:last-child{grid-column:auto;max-width:100%;}
+  .hero-actions .btn{flex:1;min-width:130px;}
+  .cta-btns{flex-direction:column;}
+  .cta-btns .btn{width:100%;}
+  .btn-row{flex-direction:column;}
+  .btn-row .btn{width:100%;justify-content:center;}
+}
+@media(max-width:400px){
+  .container{padding:0 16px;}
+  .hs-item{padding:10px 10px;}
+  .hero-stats{border-radius:8px;}
 }
 </style>
 </head>
@@ -838,21 +203,21 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
 <nav id="nav">
   <div class="container">
     <div class="nav-inner">
-      <div class="nav-brand">JaxMedia<span>.co</span></div>
+      <a href="/" class="nav-brand">
+        <img src="/logo.png" alt="Jax Media Co" class="nav-logo" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Outfit,sans-serif;font-size:16px;font-weight:700;color:rgba(228,230,240,0.90);\'>JaxMedia<span style=\'opacity:0.45;\'>.co</span></span>';" />
+      </a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#videos">Videos</a></li>
-        <li><a href="#process">Process</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/landing-pages">Landing Pages</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener" class="nav-ig">@jaxmedia_co</a>
-        <a href="#booking" class="btn btn-white" style="padding:9px 20px;font-size:13px;">Book a Call</a>
+        <a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener" class="nav-ig" style="display:inline-flex;align-items:center;gap:5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@jaxmedia_co</a>
+        <a href="/contact" class="btn btn-white" style="padding:9px 18px;font-size:13px;">Book a Call</a>
       </div>
-      <button class="hamburger" id="ham" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
@@ -860,12 +225,12 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
   <button class="mob-close" id="mobClose">✕</button>
-  <a href="#about"   class="mob-link">About</a>
-  <a href="#results" class="mob-link">Results</a>
-  <a href="#services"class="mob-link">Services</a>
-  <a href="#videos"  class="mob-link">Videos</a>
-  <a href="#process" class="mob-link">Process</a>
-  <a href="#booking" class="btn btn-blue mob-link" style="margin-top:10px;">Book a Call</a>
+  <a href="/" class="mob-link">Home</a>
+  <a href="/services" class="mob-link">Services</a>
+  <a href="/results" class="mob-link">Results</a>
+  <a href="/landing-pages" class="mob-link">Landing Pages</a>
+  <a href="/contact" class="mob-link">Contact</a>
+  <a href="/contact" class="btn btn-blue mob-link" style="margin-top:14px;padding:14px 32px;">Book a Free Call</a>
 </div>
 
 <!-- HERO -->
@@ -873,228 +238,51 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <div class="logo-wrap">
-      <div class="logo-glow"></div>
-      <div class="smoke-wrap">
-        <div class="smoke smoke-1"></div>
-        <div class="smoke smoke-2"></div>
-        <div class="smoke smoke-3"></div>
-        <div class="smoke smoke-4"></div>
-        <div class="smoke smoke-5"></div>
-        <div class="smoke smoke-6"></div>
-      </div>
-      <img src="/logo.png" alt="Jax Media Co" class="logo-img"
-           width="840" height="560"
-           onerror="this.onerror=null;this.src='logo.png';" />
-    </div>
-    <h1 class="hero-headline">
-      Helping Local Businesses Grow<br>Through <em>Content, Ads &amp; Branding.</em>
-    </h1>
-    <p class="hero-sub">
-      Content creation, landing pages, and Meta ad systems built for local businesses that are serious about standing out online.
-    </p>
+    <div class="hero-eyebrow">Local Service Business Marketing</div>
+    <h1 class="hero-headline">More Calls &amp; Booked Jobs<br>for Local Service Businesses</h1>
+    <p class="hero-subhead">Marketing that actually brings in customers — not just impressions.</p>
     <div class="hero-actions">
-      <a href="#booking" class="btn btn-white">Book a Call</a>
-      <a href="#results" class="btn btn-outline">View Results</a>
-      <a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener" class="btn btn-outline">@jaxmedia_co</a>
+      <a href="/contact" class="btn btn-white">Book a Free Call</a>
+      <a href="/results" class="btn btn-ghost">See Results →</a>
     </div>
-    <div class="hero-rule">
-      <div>
-        <div class="hero-stat-num">30K+</div>
-        <div class="hero-stat-label">Reach · TruckMax</div>
+    <div class="hero-stats">
+      <div class="hs-item">
+        <div class="hs-num">70K+</div>
+        <div class="hs-label">Reach Generated</div>
       </div>
-      <div class="hero-rule-div"></div>
-      <div>
-        <div class="hero-stat-num">8.37%</div>
-        <div class="hero-stat-label">CTR Achieved</div>
+      <div class="hs-item">
+        <div class="hs-num">8.77%</div>
+        <div class="hs-label">CTR Achieved</div>
       </div>
-      <div class="hero-rule-div"></div>
-      <div>
-        <div class="hero-stat-num">$0.22</div>
-        <div class="hero-stat-label">Cost Per Click</div>
+      <div class="hs-item">
+        <div class="hs-num">Low CPL</div>
+        <div class="hs-label">Cost Per Lead</div>
       </div>
-      <div class="hero-rule-div"></div>
-      <div>
-        <div class="hero-stat-num">7</div>
-        <div class="hero-stat-label">Booked Leads · Diesel</div>
+      <div class="hs-item">
+        <div class="hs-num">7</div>
+        <div class="hs-label">Leads · 10 Days</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- COMPANY -->
+<section id="company">
   <div class="container">
-    <div class="about-inner">
-      <div class="about-visual-block reveal">
-        <div class="about-chips">
-          <div class="chip">🎬 Content Filming</div>
-          <div class="chip">📊 Meta Ads</div>
-          <div class="chip">🌐 Landing Pages</div>
-          <div class="chip">✨ Branding</div>
-          <div class="chip">📱 Short-Form Video</div>
-          <div class="chip">📍 On-Site Shoots</div>
-        </div>
-        <div class="about-divider"></div>
-        <div class="about-stat-row">
-          <div>
-            <div class="about-s-num">2</div>
-            <div class="about-s-label">Active Campaigns</div>
-          </div>
-          <div>
-            <div class="about-s-num">$0.22</div>
-            <div class="about-s-label">Best CPC</div>
-          </div>
-          <div>
-            <div class="about-s-num">7</div>
-            <div class="about-s-label">Leads in 10 Days</div>
-          </div>
+    <div class="two-col">
+      <div class="reveal">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-h">Marketing built for service businesses that want real growth.</h2>
+        <p class="section-body">We help local businesses bring in more customers through content, paid ads, and landing pages built to convert — whether that means filming on-site or running campaigns with assets you already have.</p>
+        <p class="section-body">You focus on the work. We handle getting more eyes on it.</p>
+        <div class="btn-row">
+          <a href="/services" class="btn btn-white">Our Services</a>
+          <a href="/contact" class="btn btn-ghost">Get in Touch</a>
         </div>
       </div>
-      <div>
-        <span class="tag reveal">About</span>
-        <h2 class="about-headline reveal d1">
-          Good Businesses<br><span>Shouldn't Feel Invisible Online.</span>
-        </h2>
-        <p class="about-body reveal d2">
-          I like helping local brands create content and visuals that actually stand out without feeling fake or overdone. The goal is making the business feel more professional online while still keeping its personality.
-        </p>
-        <div style="margin-top:24px;" class="reveal d3">
-          <a href="#booking" class="btn btn-white">Work With Me</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS -->
-<section id="results">
-  <div class="container">
-    <div class="results-header">
-      <span class="tag reveal">Campaign Results</span>
-      <h2 class="results-headline reveal d1">Real Numbers.<br>Real Budgets.</h2>
-      <p class="results-sub reveal d2">Two campaigns. Different objectives. Both delivering results above industry benchmarks.</p>
-    </div>
-
-    <div class="r-tabs reveal d1">
-      <button class="r-tab on" data-panel="truckmax">TruckMax</button>
-      <button class="r-tab" data-panel="diesel">Modern Diesel &amp; Performance</button>
-    </div>
-
-    <!-- TRUCKMAX -->
-    <div class="r-panel on" id="panel-truckmax">
-      <div class="c-header reveal">
-        <div>
-          <div class="c-name">TruckMax — Campaign Performance</div>
-          <div class="c-meta">Meta Ads · 2 weeks · $25/day · Traffic &amp; Awareness objective</div>
-        </div>
-        <div class="c-badge">Traffic &amp; Reach Showcase</div>
-      </div>
-      <div class="m-grid reveal d1">
-        <div class="m-cell hero-cell">
-          <div class="m-icon">👥</div>
-          <div class="m-val counter" data-target="30000" data-suffix="+">0</div>
-          <div class="m-label">People Reached</div>
-          <div class="m-note">Unique accounts</div>
-        </div>
-        <div class="m-cell hero-cell">
-          <div class="m-icon">👁️</div>
-          <div class="m-val counter" data-target="65000" data-suffix="+">0</div>
-          <div class="m-label">Total Impressions</div>
-          <div class="m-note">Ad views</div>
-        </div>
-        <div class="m-cell hero-cell">
-          <div class="m-icon">🎯</div>
-          <div class="m-val">8.37%</div>
-          <div class="m-label">Click-Through Rate</div>
-          <div class="m-note">4× industry avg (1.9%)</div>
-        </div>
-        <div class="m-cell">
-          <div class="m-icon">🌐</div>
-          <div class="m-val counter" data-target="634" data-suffix="">0</div>
-          <div class="m-label">Landing Page Views</div>
-          <div class="m-note">Direct clicks to page</div>
-        </div>
-        <div class="m-cell">
-          <div class="m-icon">💰</div>
-          <div class="m-val">$0.22</div>
-          <div class="m-label">Cost Per Click</div>
-          <div class="m-note">Benchmark: $0.50–$1.50</div>
-        </div>
-        <div class="m-cell">
-          <div class="m-icon">📅</div>
-          <div class="m-val">14 days</div>
-          <div class="m-label">Campaign Duration</div>
-          <div class="m-note">Still scaling</div>
-        </div>
-      </div>
-      <div class="c-notes reveal d2">
-        <div class="c-note-card">
-          <div class="c-note-label">Strategy</div>
-          <div class="c-note-body">Traffic-focused campaign targeting local audience segments in the automotive and truck market. Ad creative shot and edited on-site for authenticity.</div>
-        </div>
-        <div class="c-note-card">
-          <div class="c-note-label">Context</div>
-          <div class="c-note-body">Performance metrics from the first 2 weeks on a $25/day budget. Reach and CTR are well above industry benchmarks — campaign was still in its early scaling phase.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MODERN DIESEL -->
-    <div class="r-panel" id="panel-diesel">
-      <div class="c-header reveal">
-        <div>
-          <div class="c-name">Modern Diesel &amp; Performance</div>
-          <div class="c-meta">Meta Ads · 10 days · $15/day · Lead Generation objective</div>
-        </div>
-        <div class="c-badge">7 Booked Leads</div>
-      </div>
-      <div class="m-grid reveal d1">
-        <div class="m-cell hero-cell">
-          <div class="m-icon">📞</div>
-          <div class="m-val counter" data-target="7" data-suffix="">0</div>
-          <div class="m-label">Booked Leads</div>
-          <div class="m-note">Qualified inquiries</div>
-        </div>
-        <div class="m-cell hero-cell">
-          <div class="m-icon">🎯</div>
-          <div class="m-val">5.10%</div>
-          <div class="m-label">Click-Through Rate</div>
-          <div class="m-note">2.7× industry avg</div>
-        </div>
-        <div class="m-cell hero-cell">
-          <div class="m-icon">💰</div>
-          <div class="m-val">$3.73</div>
-          <div class="m-label">Cost Per Lead</div>
-          <div class="m-note">Industry avg: $15–$50</div>
-        </div>
-        <div class="m-cell">
-          <div class="m-icon">👥</div>
-          <div class="m-val counter" data-target="4572" data-suffix="">0</div>
-          <div class="m-label">People Reached</div>
-          <div class="m-note">Targeted local market</div>
-        </div>
-        <div class="m-cell">
-          <div class="m-icon">👁️</div>
-          <div class="m-val counter" data-target="8390" data-suffix="">0</div>
-          <div class="m-label">Total Impressions</div>
-          <div class="m-note">Total ad views</div>
-        </div>
-        <div class="m-cell">
-          <div class="m-icon">🌐</div>
-          <div class="m-val counter" data-target="381" data-suffix="">0</div>
-          <div class="m-label">Landing Page Views</div>
-          <div class="m-note">Direct page traffic</div>
-        </div>
-      </div>
-      <div class="c-notes reveal d2">
-        <div class="c-note-card">
-          <div class="c-note-label">Strategy</div>
-          <div class="c-note-body">Lead generation campaign targeting diesel truck owners and performance enthusiasts in the local market. Paired with a custom landing page built for conversion.</div>
-        </div>
-        <div class="c-note-card">
-          <div class="c-note-label">Performance</div>
-          <div class="c-note-body">7 booked leads in 10 days at $3.73 per lead on a $15/day budget. Cost per lead came in roughly 90% below industry benchmarks for automotive service businesses.</div>
+      <div class="reveal d1">
+        <div class="photo-card">
+          <img src="/team-shop.jpg" alt="Jax Media Co team working on a diesel truck in the shop" />
         </div>
       </div>
     </div>
@@ -1104,47 +292,66 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
-    <div class="services-header">
-      <span class="tag reveal">What I Do</span>
-      <h2 class="services-headline reveal d1">The Full Stack<br>for Local Growth</h2>
-      <p class="services-sub reveal d2">Click any card to learn more.</p>
+    <span class="tag reveal">Services</span>
+    <h2 class="section-h reveal d1" style="margin-bottom:6px;">Everything You Need to Grow Online</h2>
+    <p class="section-body reveal d2" style="margin-bottom:20px;">One place. No agency runaround.</p>
+    <div class="svc-list">
+      <div class="svc-item reveal">
+        <span class="svc-emoji">🎬</span>
+        <div class="svc-name">Content Creation</div>
+        <div class="svc-desc">On-site filming and editing that makes your business look like it belongs online.</div>
+      </div>
+      <div class="svc-item reveal d1">
+        <span class="svc-emoji">📊</span>
+        <div class="svc-name">Meta Ads</div>
+        <div class="svc-desc">Targeted Facebook &amp; Instagram campaigns that drive calls, not just clicks.</div>
+      </div>
+      <div class="svc-item reveal d2">
+        <span class="svc-emoji">🌐</span>
+        <div class="svc-name">Landing Pages</div>
+        <div class="svc-desc">Conversion-focused pages built to turn ad clicks into booked jobs.</div>
+      </div>
+      <div class="svc-item reveal d1">
+        <span class="svc-emoji">⚡</span>
+        <div class="svc-name">Short Form Video</div>
+        <div class="svc-desc">Reels and Shorts that stop the scroll and put your business in front of new people.</div>
+      </div>
+      <div class="svc-item reveal d2">
+        <span class="svc-emoji">✨</span>
+        <div class="svc-name">Branding</div>
+        <div class="svc-desc">Visual identity that makes you look established before a word is read.</div>
+      </div>
+      <div class="svc-item reveal d3">
+        <span class="svc-emoji">📱</span>
+        <div class="svc-name">Social Strategy</div>
+        <div class="svc-desc">A content system that builds your audience and turns followers into customers.</div>
+      </div>
     </div>
-    <div class="svc-grid reveal d1">
-      <div class="svc-card" data-service="content-creation">
-        <div class="svc-icon">🎬</div>
-        <div class="svc-name">Content Creation <span class="svc-arrow">→</span></div>
-        <div class="svc-desc">On-site filming and professional editing that makes your business look like it belongs online.</div>
-        <div class="svc-more"><div class="svc-tags"><span class="svc-tag">On-Site Filming</span><span class="svc-tag">Editing</span><span class="svc-tag">Photo Content</span></div></div>
+    <div style="margin-top:22px;" class="reveal d2">
+      <a href="/services" class="btn btn-white" style="font-size:13px;padding:11px 22px;">View All Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section id="founder">
+  <div class="container">
+    <div class="two-col" style="gap:52px;">
+      <div class="reveal">
+        <div class="founder-img-card">
+          <img src="/jaxmc.jpg" alt="Jax Media Co founder working under a diesel truck in a shop" />
+        </div>
       </div>
-      <div class="svc-card" data-service="short-form-video">
-        <div class="svc-icon">⚡</div>
-        <div class="svc-name">Short Form Video <span class="svc-arrow">→</span></div>
-        <div class="svc-desc">Reels and TikToks built around your business, your story, and your audience.</div>
-        <div class="svc-more"><div class="svc-tags"><span class="svc-tag">Instagram Reels</span><span class="svc-tag">TikTok</span><span class="svc-tag">YT Shorts</span></div></div>
-      </div>
-      <div class="svc-card" data-service="meta-ads">
-        <div class="svc-icon">📊</div>
-        <div class="svc-name">Meta Ads <span class="svc-arrow">→</span></div>
-        <div class="svc-desc">Targeted Facebook and Instagram campaigns that drive real traffic without burning budget.</div>
-        <div class="svc-more"><div class="svc-tags"><span class="svc-tag">Campaign Setup</span><span class="svc-tag">Targeting</span><span class="svc-tag">Optimization</span></div></div>
-      </div>
-      <div class="svc-card" data-service="landing-pages">
-        <div class="svc-icon">🌐</div>
-        <div class="svc-name">Landing Pages <span class="svc-arrow">→</span></div>
-        <div class="svc-desc">Conversion-focused pages built to turn ad clicks into booked jobs and calls.</div>
-        <div class="svc-more"><div class="svc-tags"><span class="svc-tag">Design &amp; Build</span><span class="svc-tag">CRO</span><span class="svc-tag">Mobile-First</span></div></div>
-      </div>
-      <div class="svc-card" data-service="branding">
-        <div class="svc-icon">✨</div>
-        <div class="svc-name">Branding <span class="svc-arrow">→</span></div>
-        <div class="svc-desc">Visual identity that builds trust before a single word is read.</div>
-        <div class="svc-more"><div class="svc-tags"><span class="svc-tag">Logo</span><span class="svc-tag">Color System</span><span class="svc-tag">Guidelines</span></div></div>
-      </div>
-      <div class="svc-card" data-service="social-strategy">
-        <div class="svc-icon">📱</div>
-        <div class="svc-name">Social Strategy <span class="svc-arrow">→</span></div>
-        <div class="svc-desc">A content plan that builds your audience and converts followers into customers.</div>
-        <div class="svc-more"><div class="svc-tags"><span class="svc-tag">Content Calendar</span><span class="svc-tag">Growth</span><span class="svc-tag">Analytics</span></div></div>
+      <div class="reveal d1">
+        <span class="section-label">The Founder</span>
+        <h2 class="section-h">From wrenches<br>to marketing.</h2>
+        <p class="section-body">Built from years working on cars &amp; diesel trucks and seeing firsthand what slow seasons look like inside a shop — now helping service businesses bring in more work and stay busy year-round.</p>
+        <div class="founder-quote">
+          <p>Turns out even Snap-on doesn't make a tool for slow seasons… but the right marketing can.</p>
+        </div>
+        <div style="margin-top:22px;">
+          <a href="/contact" class="btn btn-white">Book a Free Call</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1153,53 +360,34 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
 <!-- VIDEOS -->
 <section id="videos">
   <div class="container">
-    <div class="videos-header">
-      <span class="tag reveal">The Work</span>
-      <h2 class="videos-headline reveal d1">Watch the Work</h2>
-      <p class="videos-sub reveal d2">Real shoots, real campaigns, real results.</p>
-    </div>
-
-    <div class="video-featured reveal d1">
-      <div class="yt-wrap">
-        <iframe
-          src="https://www.youtube.com/embed/uVA9u4gLvig"
-          title="YouTube video player"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="vf-meta-bar">
-        <span class="vf-tag">Featured</span>
-        <div class="vf-title">Hutch's Civic Ad</div>
-      </div>
-    </div>
-
-    <div class="video-row reveal d2">
-      <div class="v-card">
+    <span class="tag reveal">The Work</span>
+    <h2 class="section-h reveal d1" style="margin-bottom:6px;">Watch the Work</h2>
+    <p class="section-body reveal d2" style="margin-bottom:24px;">Real shoots, real campaigns, real results.</p>
+    <div class="video-grid">
+      <div class="v-card reveal d1">
         <div class="yt-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/drrsrWqLd2I"
-            title="YouTube video player"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/uVA9u4gLvig" title="Hutch's Civic Ad — Jax Media Co" frameborder="0" allowfullscreen loading="lazy"></iframe>
         </div>
-        <div class="v-info">
-          <div class="v-tag">Ad Campaign</div>
+        <div class="v-meta">
+          <span class="v-badge">Featured</span>
+          <div class="v-title">Hutch's Civic Ad</div>
+        </div>
+      </div>
+      <div class="v-card reveal d2">
+        <div class="yt-wrap">
+          <iframe src="https://www.youtube.com/embed/drrsrWqLd2I" title="Hutch's Before & After — Jax Media Co" frameborder="0" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="v-meta">
+          <span class="v-badge">Ad Campaign</span>
           <div class="v-title">Hutch's Before &amp; After Transformation</div>
         </div>
       </div>
-      <div class="v-card">
+      <div class="v-card reveal d3">
         <div class="yt-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/h4F1IyoT9OE"
-            title="YouTube video player"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/h4F1IyoT9OE" title="Modern Diesel & Performance Campaign Ad — Jax Media Co" frameborder="0" allowfullscreen loading="lazy"></iframe>
         </div>
-        <div class="v-info">
-          <div class="v-tag">Before &amp; After</div>
+        <div class="v-meta">
+          <span class="v-badge">Before &amp; After</span>
           <div class="v-title">Modern Diesel &amp; Performance Campaign Ad</div>
         </div>
       </div>
@@ -1207,219 +395,23 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
   </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process">
-  <div class="container">
-    <span class="tag reveal">Process</span>
-    <h2 class="process-headline reveal d1">How It Works</h2>
-    <p class="process-sub reveal d2">No complicated onboarding. No agency runaround.</p>
-    <div class="process-steps reveal d2">
-      <div class="p-step">
-        <div class="p-num">01</div>
-        <div class="p-name">Understand the Business</div>
-        <div class="p-desc">We talk. I learn what you do, who your customers are, and what's not working.</div>
-      </div>
-      <div class="p-step">
-        <div class="p-num">02</div>
-        <div class="p-name">Build the Foundation</div>
-        <div class="p-desc">Profiles polished. Landing page built. The base everything else runs on.</div>
-      </div>
-      <div class="p-step">
-        <div class="p-num">03</div>
-        <div class="p-name">Create &amp; Launch</div>
-        <div class="p-desc">I show up, film, edit, and go live. Real content, real campaigns.</div>
-      </div>
-      <div class="p-step">
-        <div class="p-num">04</div>
-        <div class="p-name">Drive Traffic</div>
-        <div class="p-desc">Meta ads running. The right people seeing your business at the right time.</div>
-      </div>
-      <div class="p-step">
-        <div class="p-num">05</div>
-        <div class="p-name">Scale What Works</div>
-        <div class="p-desc">We double down on what's performing and cut what isn't.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA + SOCIALS -->
+<!-- CTA -->
 <section id="cta">
   <div class="cta-glow"></div>
   <div class="container">
-    <div class="cta-inner">
-      <span class="tag tag-dark reveal">Let's Build</span>
-      <h2 class="cta-headline reveal d1">
-        Want Your Business To<br><span>Stand Out Online?</span>
-      </h2>
-      <p class="cta-sub reveal d2">
-        Most local businesses are invisible online. I'll create the content, build the pages, and run the ads — you focus on the work.
-      </p>
+    <div class="cta-wrap">
+      <span class="tag reveal" style="background:rgba(255,255,255,0.04);">Let's Talk</span>
+      <h2 class="cta-h reveal d1">Ready to get your<br><span>phone ringing?</span></h2>
+      <p class="cta-sub reveal d2">Book a free call — no pitch, no pressure. I'll tell you exactly what I'd do for your business and what it would cost.</p>
       <div class="cta-btns reveal d3">
-        <a href="#booking" class="btn btn-blue">Book a Call</a>
-        <a href="#results" class="btn btn-outline">View Results</a>
-        <a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener" class="btn btn-outline">Message on Instagram</a>
+        <a href="/contact" class="btn btn-blue">Book a Free Call</a>
+        <a href="/results" class="btn btn-ghost">View Results</a>
       </div>
       <div class="trust-row reveal d4">
-        <div class="trust-item"><span class="trust-icon">✓</span> No long-term contracts</div>
-        <div class="trust-item"><span class="trust-icon">✓</span> Fast turnaround</div>
-        <div class="trust-item"><span class="trust-icon">✓</span> On-site available</div>
-        <div class="trust-item"><span class="trust-icon">✓</span> Real data, real results</div>
-      </div>
-    </div>
-
-    <div class="socials-block">
-      <div>
-        <h3 class="social-left-headline reveal">Follow the Journey</h3>
-        <p class="social-left-sub reveal d1">Campaign breakdowns, content strategy, and behind-the-scenes marketing content.</p>
-        <div class="social-handles reveal d2">
-          <a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener" class="social-link">
-            <span class="social-icon">📸</span>
-            <span>Instagram — @jaxmedia_co</span>
-          </a>
-        </div>
-      </div>
-      <div class="insta-mini-grid reveal d1">
-        <div class="ig-tile ig-1"><div class="ig-label"><div class="ig-label-icon">🎬</div><div class="ig-label-text">Content</div></div><div class="ig-tile-overlay">🎬</div></div>
-        <div class="ig-tile ig-2"><div class="ig-label"><div class="ig-label-icon">📊</div><div class="ig-label-text">Ads</div></div><div class="ig-tile-overlay">📊</div></div>
-        <div class="ig-tile ig-3"><div class="ig-label"><div class="ig-label-icon">🎥</div><div class="ig-label-text">BTS</div></div><div class="ig-tile-overlay">🎥</div></div>
-        <div class="ig-tile ig-4"><div class="ig-label"><div class="ig-label-icon">🌐</div><div class="ig-label-text">Pages</div></div><div class="ig-tile-overlay">🌐</div></div>
-        <div class="ig-tile ig-5"><div class="ig-label"><div class="ig-label-icon">💰</div><div class="ig-label-text">Results</div></div><div class="ig-tile-overlay">💰</div></div>
-        <div class="ig-tile ig-6"><div class="ig-label"><div class="ig-label-icon">🔥</div><div class="ig-label-text">Strategy</div></div><div class="ig-tile-overlay">🔥</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOKING -->
-<section id="booking">
-  <div class="container">
-    <div class="booking-header">
-      <span class="tag reveal">Get Started</span>
-      <h2 class="booking-headline reveal d1">Book a Free Call</h2>
-      <p class="booking-sub reveal d2">Fill out the form below and I'll get back to you within 24 hours. No pressure, no pitch — just a conversation.</p>
-    </div>
-
-    <div class="booking-grid">
-      <!-- FORM -->
-      <div class="booking-form-wrap reveal">
-        <form class="booking-form" id="bookingForm" onsubmit="handleSubmit(event)">
-
-          <!-- Name + Business -->
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Name</label>
-              <input type="text" id="f_name" class="form-input" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Business Name</label>
-              <input type="text" id="f_business" class="form-input" placeholder="Your business" required />
-            </div>
-          </div>
-
-          <!-- Email + Phone -->
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Email</label>
-              <input type="email" id="f_email" class="form-input" placeholder="your@email.com" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Phone Number</label>
-              <input type="tel" id="f_phone" class="form-input" placeholder="(555) 000-0000" />
-            </div>
-          </div>
-
-          <!-- Type of business -->
-          <div class="form-group">
-            <label class="form-label">What type of business do you run?</label>
-            <input type="text" id="f_biztype" class="form-input" placeholder="e.g. Auto shop, contractor, diesel performance, retail…" />
-          </div>
-
-          <!-- What are you looking for -->
-          <div class="form-group">
-            <label class="form-label">What are you mainly looking for help with?</label>
-            <div class="check-grid">
-              <label class="check-item">
-                <input type="checkbox" name="services" value="content" />
-                <span>Content Creation</span>
-              </label>
-              <label class="check-item">
-                <input type="checkbox" name="services" value="ads" />
-                <span>Meta Ads</span>
-              </label>
-              <label class="check-item">
-                <input type="checkbox" name="services" value="landing-page" />
-                <span>Landing Page</span>
-              </label>
-              <label class="check-item">
-                <input type="checkbox" name="services" value="branding" />
-                <span>Branding</span>
-              </label>
-              <label class="check-item">
-                <input type="checkbox" name="services" value="social" />
-                <span>Social Media Growth</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Biggest issue -->
-          <div class="form-group">
-            <label class="form-label">What's your biggest issue right now online?</label>
-            <input type="text" id="f_issue" class="form-input" placeholder="Tell me what's not working for you…" />
-          </div>
-
-          <!-- Run ads -->
-          <div class="form-group">
-            <label class="form-label">Do you currently run ads?</label>
-            <div class="radio-row">
-              <label class="radio-item">
-                <input type="radio" name="ads" value="yes" />
-                <span>Yes</span>
-              </label>
-              <label class="radio-item">
-                <input type="radio" name="ads" value="no" />
-                <span>No</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Message -->
-          <div class="form-group">
-            <label class="form-label">Anything else you'd like me to know?</label>
-            <textarea id="f_message" class="form-textarea" placeholder="Optional — anything that helps me understand your situation better." rows="4"></textarea>
-          </div>
-
-          <button type="submit" class="form-submit">
-            Send It →
-          </button>
-        </form>
-      </div>
-
-      <!-- INFO CARDS -->
-      <div class="booking-info reveal d1">
-        <div class="booking-info-card">
-          <div class="booking-info-icon">⚡</div>
-          <div class="booking-info-title">Fast Response</div>
-          <div class="booking-info-body">I personally review every form submission and get back to you within 24 hours — usually same day.</div>
-        </div>
-        <div class="booking-divider"></div>
-        <div class="booking-info-card">
-          <div class="booking-info-icon">🎯</div>
-          <div class="booking-info-title">No Commitment</div>
-          <div class="booking-info-body">The call is free. We talk through your situation, and if it's a fit, I'll tell you exactly what I'd do and what it would cost.</div>
-        </div>
-        <div class="booking-divider"></div>
-        <div class="booking-info-card">
-          <div class="booking-info-icon">📍</div>
-          <div class="booking-info-title">I Come To You</div>
-          <div class="booking-info-body">For content shoots I come on-site. No studio, no hassle — real footage of your real business.</div>
-        </div>
-        <div class="booking-divider"></div>
-        <div class="booking-info-card">
-          <div class="booking-info-icon">📊</div>
-          <div class="booking-info-title">Proven Results</div>
-          <div class="booking-info-body">$0.22 CPC. 8.37% CTR. 7 booked leads in 10 days. Real numbers from real local campaigns.</div>
-        </div>
+        <div class="trust-item"><div class="trust-dot"></div>No long-term contracts</div>
+        <div class="trust-item"><div class="trust-dot"></div>Fast turnaround</div>
+        <div class="trust-item"><div class="trust-dot"></div>On-site available</div>
+        <div class="trust-item"><div class="trust-dot"></div>Real data, real results</div>
       </div>
     </div>
   </div>
@@ -1431,10 +423,10 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
     <div class="footer-inner">
       <div class="footer-brand">JaxMedia<span>.co</span></div>
       <ul class="footer-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#videos">Videos</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/landing-pages">Landing Pages</a></li>
+        <li><a href="/contact">Contact</a></li>
         <li><a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
       <div class="footer-copy">© 2026 Jax Media Co.</div>
@@ -1442,239 +434,38 @@ footer { background:var(--bg3); border-top:1px solid var(--border); padding:36px
   </div>
 </footer>
 
-<!-- SERVICE MODAL -->
-<div class="modal-backdrop" id="serviceModal" style="display:none;">
-  <div class="modal-box">
-    <div class="modal-head">
-      <div class="modal-head-left">
-        <div class="modal-head-icon" id="modalIcon"></div>
-        <div>
-          <div class="modal-title" id="modalTitle"></div>
-          <div class="modal-subtitle" id="modalSubtitle"></div>
-        </div>
-      </div>
-      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-    </div>
-    <div class="modal-body">
-      <p class="modal-desc" id="modalDesc"></p>
-      <div class="modal-bullets" id="modalBullets"></div>
-    </div>
-    <div class="modal-foot">
-      <span class="modal-foot-note">No commitment — just a conversation.</span>
-      <a href="#booking" class="modal-book-btn" id="modalBookBtn">
-        Book Now
-        <svg viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M2.5 6.5h8M7 3l3.5 3.5L7 10"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</div>
-
 <script>
-// ── NAV ──
+// Nav
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60), { passive: true });
+window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 40), { passive: true });
 
-// ── PARALLAX on hero bg ──
+// Parallax
 const heroGrid = document.querySelector('.hero-grid');
 const heroGlow = document.querySelector('.hero-glow');
 window.addEventListener('scroll', () => {
   const s = window.scrollY;
-  if (heroGrid) heroGrid.style.transform = `translateY(${s * 0.15}px)`;
-  if (heroGlow) heroGlow.style.transform  = `translateX(-50%) translateY(${s * 0.20}px)`;
+  if (heroGrid) heroGrid.style.transform = `translateY(${s * 0.10}px)`;
+  if (heroGlow) heroGlow.style.transform  = `translateX(-50%) translateY(${s * 0.15}px)`;
 }, { passive: true });
 
-// ── MOBILE NAV ──
-const ham    = document.getElementById('ham');
+// Mobile nav
+const ham = document.getElementById('ham');
 const mobNav = document.getElementById('mobNav');
 ham.addEventListener('click', () => mobNav.classList.add('open'));
 document.getElementById('mobClose').addEventListener('click', () => mobNav.classList.remove('open'));
 document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobNav.classList.remove('open')));
 
-// ── REVEAL ON SCROLL ──
-const revealObs = new IntersectionObserver(entries => {
+// Reveal
+const ro = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.10 });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-// ── ANIMATED COUNTERS ──
-function runCounter(el) {
-  const target = parseInt(el.dataset.target, 10);
-  const suffix = el.dataset.suffix || '';
-  const dur    = 1600;
-  const start  = performance.now();
-  const tick   = now => {
-    const p     = Math.min((now - start) / dur, 1);
-    const eased = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(eased * target).toLocaleString() + suffix;
-    if (p < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-}
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { runCounter(e.target); counterObs.unobserve(e.target); }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
-
-// ── CAMPAIGN TABS ──
-document.querySelectorAll('.r-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.r-tab').forEach(t => t.classList.remove('on'));
-    document.querySelectorAll('.r-panel').forEach(p => p.classList.remove('on'));
-    tab.classList.add('on');
-    const panel = document.getElementById('panel-' + tab.dataset.panel);
-    if (panel) {
-      panel.classList.add('on');
-      panel.querySelectorAll('.counter').forEach(el => {
-        el.textContent = '0';
-        setTimeout(() => runCounter(el), 80);
-      });
-    }
-  });
+// Active nav
+const path = window.location.pathname.replace(/\/$/, '') || '/';
+document.querySelectorAll('.nav-links a').forEach(a => {
+  if ((a.getAttribute('href') || '').replace(/\/$/, '') === path) a.classList.add('active');
 });
-
-// ── SERVICE MODAL ──
-const serviceData = {
-  'content-creation': {
-    icon:'🎬', title:'Content Creation', subtitle:'On-site filming & professional editing',
-    desc:'Most businesses look invisible online because their content looks like everyone else\'s. I come to your location, camera in hand, and make content that actually shows what you do and why people should call you.',
-    bullets:['On-site shoot days — I come to you','Professional video & photo editing','Content built to be repurposed across all platforms']
-  },
-  'short-form-video': {
-    icon:'⚡', title:'Short Form Video', subtitle:'Reels, TikToks & YouTube Shorts',
-    desc:'Short-form is the fastest way to get your business in front of new people right now. I handle the hooks, the editing, and the posting — content that stops the scroll without making you dance on camera.',
-    bullets:['Instagram Reels, TikTok & YouTube Shorts','Hook writing and scripting included','Monthly content packages available']
-  },
-  'meta-ads': {
-    icon:'📊', title:'Meta Ads', subtitle:'Facebook & Instagram ad campaigns',
-    desc:'Running ads without a strategy is just burning money. I build targeted campaigns aimed at the right people in your area — with creative that gets clicked and pages built to close the deal.',
-    bullets:['Full campaign setup, targeting & ad creative','Ongoing optimization based on real data','Transparent reporting so you always know what\'s working']
-  },
-  'landing-pages': {
-    icon:'🌐', title:'Landing Pages', subtitle:'Built to turn clicks into booked jobs',
-    desc:'Sending ad traffic to a generic website is one of the most common mistakes local businesses make. I build focused pages with one job — get the visitor to call, fill out a form, or book on the spot.',
-    bullets:['Custom design built around your offer','Mobile-first, fast-loading, conversion-focused','Lead forms, call tracking & analytics included']
-  },
-  'branding': {
-    icon:'✨', title:'Branding', subtitle:'Look like the business you actually are',
-    desc:'A lot of solid businesses look like they just started last week online. I build visual identities that make you look established and worth trusting — before a customer reads a single word.',
-    bullets:['Logo, color system & typography','Brand guidelines so everything stays consistent','Social media kit & print-ready files']
-  },
-  'social-strategy': {
-    icon:'📱', title:'Social Media Strategy', subtitle:'A real plan — not just "post more often"',
-    desc:'"Post more" isn\'t a strategy. I build a content system around your business — what to post, when, and how to make the right people see it — so your social media actually brings in business.',
-    bullets:['Profile audit & full optimization','Monthly content calendar with captions & hooks','Growth strategy tailored to your market']
-  }
-};
-
-const modalBackdrop = document.getElementById('serviceModal');
-const modalIcon     = document.getElementById('modalIcon');
-const modalTitle    = document.getElementById('modalTitle');
-const modalSubtitle = document.getElementById('modalSubtitle');
-const modalDesc     = document.getElementById('modalDesc');
-const modalBullets  = document.getElementById('modalBullets');
-const modalBookBtn  = document.getElementById('modalBookBtn');
-
-function openModal(key) {
-  const d = serviceData[key]; if (!d) return;
-  modalIcon.textContent     = d.icon;
-  modalTitle.textContent    = d.title;
-  modalSubtitle.textContent = d.subtitle;
-  modalDesc.textContent     = d.desc;
-  modalBullets.innerHTML    = d.bullets.map(b => `<div class="modal-bullet">${b}</div>`).join('');
-  modalBookBtn.href = '#booking';
-  modalBackdrop.style.display = 'flex';
-  modalBackdrop.offsetHeight;
-  modalBackdrop.classList.add('is-visible');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal() {
-  modalBackdrop.classList.remove('is-visible');
-  setTimeout(() => { modalBackdrop.style.display = 'none'; document.body.style.overflow = ''; }, 300);
-}
-
-document.querySelectorAll('.svc-card').forEach(card => card.addEventListener('click', () => openModal(card.dataset.service)));
-document.getElementById('modalClose').addEventListener('click', closeModal);
-modalBackdrop.addEventListener('click', e => { if (e.target === modalBackdrop) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-modalBookBtn.addEventListener('click', e => {
-  e.preventDefault();
-  closeModal();
-  setTimeout(() => document.getElementById('booking').scrollIntoView({ behavior:'smooth', block:'start' }), 320);
-});
-
-// ── SMOOTH SCROLL ──
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const id = link.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    if (!target) return;
-    e.preventDefault();
-    document.getElementById('mobNav').classList.remove('open');
-    target.scrollIntoView({ behavior:'smooth', block:'start' });
-  });
-});
-
-// ── FORM SUBMISSION ──
-async function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn  = form.querySelector('.form-submit');
-
-  // Collect all field values
-  const payload = {
-    name:         document.getElementById('f_name').value.trim(),
-    business_name: document.getElementById('f_business').value.trim(),
-    email:        document.getElementById('f_email').value.trim(),
-    phone:        document.getElementById('f_phone').value.trim(),
-    business_type: document.getElementById('f_biztype').value.trim(),
-    services:     [...form.querySelectorAll('input[name="services"]:checked')].map(el => el.value),
-    biggest_issue: document.getElementById('f_issue').value.trim(),
-    runs_ads:     (form.querySelector('input[name="ads"]:checked') || {}).value || '',
-    message:      document.getElementById('f_message').value.trim(),
-  };
-
-  // Loading state
-  const origText = btn.textContent;
-  btn.textContent = 'Sending…';
-  btn.disabled    = true;
-  btn.style.animation = 'none';
-
-  try {
-    const res = await fetch(
-      'https://services.leadconnectorhq.com/hooks/1A4yMzkxVWwaedd8Ja4F/webhook-trigger/d56fbdda-c393-4c6c-bb95-07a26268aa57',
-      {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload),
-      }
-    );
-
-    if (!res.ok) throw new Error('Server error');
-
-    // Success state (same as original)
-    btn.textContent      = "Sent! I'll be in touch soon.";
-    btn.style.background = '#2a9d5c';
-
-  } catch (err) {
-    // Error state — re-enable so they can retry
-    btn.textContent      = 'Something went wrong. Please try again.';
-    btn.style.background = '#c0392b';
-    btn.style.animation  = 'none';
-    btn.disabled         = false;
-    // Reset button after 4 s
-    setTimeout(() => {
-      btn.textContent      = origText;
-      btn.style.background = '';
-      btn.style.animation  = '';
-    }, 4000);
-  }
-}
 </script>
-
 </body>
 </html>
