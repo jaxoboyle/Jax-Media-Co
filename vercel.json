@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/services",      "destination": "/services/index.html" },
+    { "source": "/results",       "destination": "/results/index.html" },
+    { "source": "/landing-pages", "destination": "/landing-pages/index.html" },
+    { "source": "/contact",       "destination": "/contact/index.html" }
+  ]
+}

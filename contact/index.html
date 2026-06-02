@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book a Free Call — Jax Media Co</title>
+<meta name="description" content="Book a free call with Jax Media Co. Fill out the form and get a response within 24 hours. No commitment, no pressure — just a conversation about growing your business online." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#1c1c24;color:#e4e6f0;overflow-x:hidden;line-height:1.6;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;}
+:root{
+  --bg:#1c1c24;--bg2:#21212b;--bg3:#191920;--bg4:#2a2a36;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);
+  --text:#e4e6f0;--text2:rgba(228,230,240,0.58);--text3:rgba(228,230,240,0.28);
+  --silver:#8090aa;--blue:#3a7bff;--r:14px;--r2:20px;
+}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg3);}
+::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:2px;}
+.container{max-width:1120px;margin:0 auto;padding:0 28px;}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);background:var(--bg4);border:1px solid var(--border2);padding:5px 14px;border-radius:100px;margin-bottom:18px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all 0.3s ease;white-space:nowrap;text-decoration:none;}
+.btn-white{background:#e4e6f0;color:#111118;}
+.btn-white:hover{background:#f0f2ff;transform:translateY(-2px);box-shadow:0 8px 28px rgba(228,230,240,0.18);}
+.btn-outline{background:transparent;color:rgba(228,230,240,0.68);border:1px solid rgba(255,255,255,0.20);}
+.btn-outline:hover{color:#e4e6f0;border-color:rgba(255,255,255,0.38);background:rgba(255,255,255,0.07);transform:translateY(-1px);}
+.btn-blue{background:var(--blue);color:#fff;animation:btnPulse 3s ease-in-out infinite;}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(58,123,255,0.38);filter:brightness(1.1);animation:none;}
+@keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(58,123,255,0);}50%{box-shadow:0 0 0 10px rgba(58,123,255,0.14);}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal.d1{transition-delay:0.08s;}.reveal.d2{transition-delay:0.16s;}.reveal.d3{transition-delay:0.24s;}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:20px 0;transition:all 0.35s ease;}
+#nav .nav-brand{color:rgba(228,230,240,0.92);}
+#nav .nav-links a{color:rgba(228,230,240,0.60);}
+#nav .nav-links a:hover,#nav .nav-links a.active{color:#e4e6f0;background:rgba(255,255,255,0.08);}
+#nav .hamburger span{background:rgba(228,230,240,0.78);}
+#nav .btn-white{background:rgba(255,255,255,0.12);color:#e4e6f0;border:1px solid rgba(255,255,255,0.22);}
+#nav .btn-white:hover{background:rgba(255,255,255,0.22);}
+#nav.solid{background:rgba(25,25,32,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.08);padding:13px 0;}
+#nav.solid .nav-links a{color:rgba(228,230,240,0.60);}
+#nav.solid .nav-links a:hover,#nav.solid .nav-links a.active{color:#e4e6f0;background:rgba(255,255,255,0.07);}
+#nav.solid .hamburger span{background:rgba(228,230,240,0.70);}
+#nav.solid .btn-white{background:rgba(255,255,255,0.10);color:#e4e6f0;border:1px solid rgba(255,255,255,0.18);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.nav-brand{display:flex;align-items:center;}
+.nav-logo{height:34px;width:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;padding:7px 14px;border-radius:100px;transition:all 0.2s;}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-ig{font-size:13px;font-weight:500;padding:7px 14px;border-radius:100px;transition:all 0.2s;border:1px solid transparent;color:rgba(228,230,240,0.60);}
+.nav-ig:hover{color:#e4e6f0;border-color:rgba(255,255,255,0.32);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:1.5px;border-radius:1px;transition:all 0.3s;}
+.mob-nav{display:none;position:fixed;inset:0;z-index:899;background:rgba(22,22,30,0.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:16px;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:#e4e6f0;transition:color 0.2s;}
+.mob-nav a:hover{color:var(--blue);}
+.mob-close{position:absolute;top:22px;right:24px;background:none;border:none;color:rgba(228,230,240,0.38);font-size:24px;cursor:pointer;}
+
+/* PAGE HERO */
+.page-hero{background:#111118;padding:140px 0 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,#21212b);pointer-events:none;}
+.hero-grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.028) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 80% at 50% 40%,black 20%,transparent 100%);}
+.hero-glow-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(58,123,255,0.07) 0%,transparent 70%);pointer-events:none;}
+.page-hero .container{position:relative;z-index:2;}
+.page-title{font-family:'Outfit',sans-serif;font-size:clamp(32px,5vw,60px);font-weight:800;letter-spacing:-0.03em;color:var(--text);line-height:1.1;margin-bottom:14px;}
+.page-sub{font-size:clamp(15px,2vw,17px);color:var(--text2);max-width:480px;line-height:1.7;}
+
+/* BOOKING */
+#booking{padding:80px 0 96px;background:var(--bg2);}
+.booking-grid{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start;}
+.booking-form-wrap{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);padding:36px;}
+.booking-form{display:flex;flex-direction:column;gap:0;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:20px;}
+.form-label{font-size:12px;font-weight:600;color:var(--text2);letter-spacing:0.04em;text-transform:uppercase;}
+.form-input,.form-textarea{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;font-size:14px;color:var(--text);font-family:inherit;outline:none;transition:border-color 0.25s,box-shadow 0.25s;width:100%;}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--text3);}
+.form-input:hover,.form-textarea:hover{border-color:var(--border2);}
+.form-input:focus,.form-textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(58,123,255,0.14);}
+.form-textarea{resize:vertical;min-height:100px;line-height:1.6;}
+.form-select{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;font-size:14px;color:var(--text);font-family:inherit;outline:none;transition:border-color 0.25s,box-shadow 0.25s;width:100%;appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(228,230,240,0.35)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+.form-select:hover{border-color:var(--border2);}
+.form-select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(58,123,255,0.14);}
+.form-select option{background:#21212b;color:#e4e6f0;}
+.form-submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px 28px;border-radius:100px;background:var(--blue);color:#fff;font-family:inherit;font-size:15px;font-weight:700;border:none;cursor:pointer;transition:all 0.3s ease;animation:btnPulse 3s ease-in-out infinite;margin-top:4px;}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(58,123,255,0.38);filter:brightness(1.1);animation:none;}
+
+/* INFO CARDS */
+.booking-info{position:sticky;top:100px;display:flex;flex-direction:column;gap:14px;}
+.booking-info-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);padding:24px;transition:transform 0.3s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s;}
+.booking-info-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.30);}
+.booking-info-icon{font-size:22px;margin-bottom:10px;}
+.booking-info-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.booking-info-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.booking-divider{height:1px;background:var(--border);}
+
+/* FOOTER */
+footer{background:var(--bg3);border-top:1px solid var(--border);padding:36px 0 24px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+.footer-brand{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--text);}
+.footer-brand span{color:var(--text3);}
+.footer-links{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-size:13px;color:var(--text3);transition:color 0.2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-copy{font-size:12px;color:var(--text3);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .booking-grid{grid-template-columns:1fr;}
+  .booking-info{position:static;}
+  .nav-links,.nav-ig{display:none;}
+  .hamburger{display:flex;}
+}
+@media(max-width:640px){
+  .form-row{grid-template-columns:1fr;}
+  .check-grid{grid-template-columns:1fr;}
+  .booking-form-wrap{padding:24px 20px;}
+}
+@media(max-width:480px){.container{padding:0 20px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/logo.png" alt="Jax Media Co" class="nav-logo"
+             onerror="this.outerHTML='<span style=\'font-family:Outfit,sans-serif;font-size:16px;font-weight:700;color:rgba(228,230,240,.92);\'>JaxMedia<span style=\'opacity:.45;font-weight:600;\'>.co</span></span>'" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/landing-pages">Landing Pages</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener" class="nav-ig" style="display:inline-flex;align-items:center;gap:5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@jaxmedia_co</a>
+        <a href="/contact" class="btn btn-white" style="padding:9px 20px;font-size:13px;">Book a Call</a>
+      </div>
+      <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="/" class="mob-link">Home</a>
+  <a href="/services" class="mob-link">Services</a>
+  <a href="/results" class="mob-link">Results</a>
+  <a href="/landing-pages" class="mob-link">Landing Pages</a>
+  <a href="/contact" class="mob-link">Contact</a>
+  <a href="/contact" class="btn btn-blue mob-link" style="margin-top:10px;">Book a Call</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow-bg"></div>
+  <div class="container">
+    <span class="tag">Get Started</span>
+    <h1 class="page-title">Book a Free Call</h1>
+    <p class="page-sub">Fill out the form below and I'll get back to you within 24 hours. No pressure, no pitch — just a conversation about your business.</p>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section id="booking">
+  <div class="container">
+    <div class="booking-grid">
+
+      <!-- FORM -->
+      <div class="booking-form-wrap reveal">
+        <form class="booking-form" id="bookingForm" onsubmit="handleSubmit(event)">
+
+          <!-- Row 1: Name + Phone -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" id="f_name" class="form-input" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" id="f_phone" class="form-input" placeholder="(555) 000-0000" required />
+            </div>
+          </div>
+
+          <!-- Business Name -->
+          <div class="form-group">
+            <label class="form-label">Business Name</label>
+            <input type="text" id="f_business" class="form-input" placeholder="Your business" required />
+          </div>
+
+          <!-- Service dropdown -->
+          <div class="form-group">
+            <label class="form-label">What service are you interested in?</label>
+            <select id="f_service" class="form-select" required>
+              <option value="" disabled selected>Select a service…</option>
+              <option value="Content Creation">Content Creation</option>
+              <option value="Meta Ads">Meta Ads</option>
+              <option value="Landing Page">Landing Page</option>
+              <option value="Full Growth System">Full Growth System</option>
+              <option value="Not Sure Yet">Not Sure Yet</option>
+            </select>
+          </div>
+
+          <!-- Goal field -->
+          <div class="form-group">
+            <label class="form-label">What are you trying to get more of right now?</label>
+            <input type="text" id="f_goal" class="form-input" placeholder="More calls, booked jobs, better website, more content, etc." />
+          </div>
+
+          <button type="submit" class="form-submit">Send It →</button>
+        </form>
+      </div>
+
+      <!-- INFO CARDS -->
+      <div class="booking-info reveal d1">
+        <div class="booking-info-card">
+          <div class="booking-info-icon">⚡</div>
+          <div class="booking-info-title">Fast Response</div>
+          <div class="booking-info-body">I personally review every form submission and get back to you within 24 hours — usually same day.</div>
+        </div>
+        <div class="booking-divider"></div>
+        <div class="booking-info-card">
+          <div class="booking-info-icon">🎯</div>
+          <div class="booking-info-title">No Commitment</div>
+          <div class="booking-info-body">The call is free. We talk through your situation, and if it's a fit, I'll tell you exactly what I'd do and what it would cost.</div>
+        </div>
+        <div class="booking-divider"></div>
+        <div class="booking-info-card">
+          <div class="booking-info-icon">📍</div>
+          <div class="booking-info-title">I Come To You</div>
+          <div class="booking-info-body">For content shoots I come on-site. No studio, no hassle — real footage of your real business.</div>
+        </div>
+        <div class="booking-divider"></div>
+        <div class="booking-info-card">
+          <div class="booking-info-icon">📊</div>
+          <div class="booking-info-title">Proven Results</div>
+          <div class="booking-info-body">$0.22 CPC. 8.37% CTR. 7 booked leads in 10 days. Real numbers from real local campaigns.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">JaxMedia<span>.co</span></div>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/landing-pages">Landing Pages</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 Jax Media Co.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60), { passive: true });
+const ham = document.getElementById('ham');
+const mobNav = document.getElementById('mobNav');
+ham.addEventListener('click', () => mobNav.classList.add('open'));
+document.getElementById('mobClose').addEventListener('click', () => mobNav.classList.remove('open'));
+document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobNav.classList.remove('open')));
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.10 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+const path = window.location.pathname.replace(/\/$/, '') || '/';
+document.querySelectorAll('.nav-links a').forEach(a => {
+  const href = (a.getAttribute('href') || '').replace(/\/$/, '') || '/';
+  if (href === path) a.classList.add('active');
+});
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = form.querySelector('.form-submit');
+  const payload = {
+    name:          document.getElementById('f_name').value.trim(),
+    phone:         document.getElementById('f_phone').value.trim(),
+    business_name: document.getElementById('f_business').value.trim(),
+    service:       document.getElementById('f_service').value,
+    goal:          document.getElementById('f_goal').value.trim(),
+  };
+  const origText = btn.textContent;
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  btn.style.animation = 'none';
+  try {
+    const res = await fetch(
+      'https://services.leadconnectorhq.com/hooks/1A4yMzkxVWwaedd8Ja4F/webhook-trigger/d56fbdda-c393-4c6c-bb95-07a26268aa57',
+      { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }
+    );
+    if (!res.ok) throw new Error('Server error');
+    btn.textContent      = "Sent! I'll be in touch soon.";
+    btn.style.background = '#2a9d5c';
+  } catch (err) {
+    btn.textContent      = 'Something went wrong. Please try again.';
+    btn.style.background = '#c0392b';
+    btn.style.animation  = 'none';
+    btn.disabled         = false;
+    setTimeout(() => {
+      btn.textContent      = origText;
+      btn.style.background = '';
+      btn.style.animation  = '';
+    }, 4000);
+  }
+}
+</script>
+</body>
+</html>

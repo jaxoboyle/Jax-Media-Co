@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services — Jax Media Co</title>
+<meta name="description" content="Content creation, Meta ads, landing pages, and branding for local service businesses. More calls, more booked jobs — without hiring a whole agency." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#1c1c24;color:#e4e6f0;overflow-x:hidden;line-height:1.6;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;}
+:root{
+  --bg:#1c1c24;--bg2:#21212b;--bg3:#191920;--bg4:#2a2a36;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#e4e6f0;--text2:rgba(228,230,240,0.58);--text3:rgba(228,230,240,0.26);
+  --silver:#8090aa;--blue:#3a7bff;--r:14px;--r2:20px;
+}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg3);}
+::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:2px;}
+.container{max-width:1120px;margin:0 auto;padding:0 28px;}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);background:var(--bg4);border:1px solid var(--border2);padding:5px 14px;border-radius:100px;margin-bottom:16px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all 0.25s ease;white-space:nowrap;text-decoration:none;font-family:inherit;}
+.btn-white{background:#e4e6f0;color:#111118;}
+.btn-white:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(228,230,240,0.16);}
+.btn-outline{background:transparent;color:rgba(228,230,240,0.65);border:1px solid rgba(255,255,255,0.20);}
+.btn-outline:hover{color:#e4e6f0;border-color:rgba(255,255,255,0.36);background:rgba(255,255,255,0.06);}
+.btn-blue{background:var(--blue);color:#fff;animation:btnPulse 3s ease-in-out infinite;}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(58,123,255,0.36);filter:brightness(1.1);animation:none;}
+@keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(58,123,255,0);}50%{box-shadow:0 0 0 9px rgba(58,123,255,0.13);}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1);}
+.reveal.in{opacity:1;transform:none;}
+.d1{transition-delay:0.07s;}.d2{transition-delay:0.14s;}.d3{transition-delay:0.21s;}.d4{transition-delay:0.28s;}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:18px 0;transition:all 0.3s ease;}
+#nav.solid{background:rgba(25,25,32,0.95);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid var(--border);padding:12px 0;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.nav-brand{display:flex;align-items:center;}
+.nav-logo{height:34px;width:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;padding:6px 13px;border-radius:100px;color:rgba(228,230,240,0.54);transition:all 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#e4e6f0;background:rgba(255,255,255,0.07);}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.nav-ig{font-size:13px;font-weight:500;color:rgba(228,230,240,0.50);padding:6px 13px;border-radius:100px;border:1px solid rgba(255,255,255,0.12);transition:all 0.2s;}
+.nav-ig:hover{color:#e4e6f0;border-color:rgba(255,255,255,0.26);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px;}
+.hamburger span{display:block;width:20px;height:1.5px;background:rgba(228,230,240,0.70);border-radius:1px;transition:all 0.3s;}
+.mob-nav{display:none;position:fixed;inset:0;z-index:899;background:rgba(18,18,24,0.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:14px;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;color:#e4e6f0;}
+.mob-nav a:hover{color:var(--blue);}
+.mob-close{position:absolute;top:20px;right:22px;background:none;border:none;color:rgba(228,230,240,0.35);font-size:22px;cursor:pointer;}
+
+/* ── PAGE HERO — 2-col ── */
+.page-hero{
+  background:#111118;
+  padding:120px 0 56px;
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,#1c1c24);pointer-events:none;}
+.hero-grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 80% at 50% 40%,black 0%,transparent 100%);}
+.hero-glow-bg{position:absolute;top:40%;left:30%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(58,123,255,0.06) 0%,transparent 68%);pointer-events:none;}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+
+/* Left column */
+.hero-left .page-tag{display:inline-flex;font-size:10px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--silver);background:rgba(255,255,255,0.06);border:1px solid var(--border2);padding:5px 13px;border-radius:100px;margin-bottom:16px;}
+.page-title{font-family:'Outfit',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:800;letter-spacing:-0.03em;color:#eef0f8;line-height:1.08;margin-bottom:14px;}
+.page-sub{font-size:15px;color:rgba(228,230,240,0.68);line-height:1.72;margin-bottom:24px;max-width:440px;}
+
+/* Right column — quick service list */
+.hero-svc-list{display:flex;flex-direction:column;gap:10px;}
+.hsvc-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;
+  padding:15px 18px;
+  transition:border-color 0.2s,background 0.2s;
+}
+.hsvc-card:hover{border-color:rgba(58,123,255,0.25);background:rgba(58,123,255,0.04);}
+.hsvc-top{display:flex;align-items:center;gap:10px;margin-bottom:5px;}
+.hsvc-icon{font-size:17px;line-height:1;}
+.hsvc-name{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--text);}
+.hsvc-desc{font-size:12px;color:rgba(228,230,240,0.52);line-height:1.58;padding-left:27px;}
+
+/* ── SERVICE CARDS ── */
+#services{padding:60px 0;background:var(--bg);}
+.section-head{margin-bottom:28px;}
+.section-headline{font-family:'Outfit',sans-serif;font-size:clamp(24px,3.5vw,40px);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:8px;}
+.section-sub{font-size:14px;color:var(--text2);}
+
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+
+/* Base card */
+.svc-card{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:var(--r2);
+  padding:24px 22px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:border-color 0.25s,box-shadow 0.25s,background 0.25s,transform 0.25s cubic-bezier(0.22,1,0.36,1);
+  user-select:none;
+}
+.svc-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(58,123,255,0) 0%,rgba(58,123,255,0.06) 100%);
+  opacity:0;transition:opacity 0.25s;pointer-events:none;
+}
+.svc-card:hover{border-color:rgba(58,123,255,0.20);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.28);}
+.svc-card:hover::before{opacity:1;}
+
+/* Active / expanded state */
+.svc-card.active{
+  border-color:rgba(58,123,255,0.55);
+  background:linear-gradient(135deg,var(--bg2) 0%,rgba(58,123,255,0.07) 100%);
+  box-shadow:0 0 0 1px rgba(58,123,255,0.25),0 8px 32px rgba(58,123,255,0.10),0 16px 40px rgba(0,0,0,0.32);
+  transform:translateY(-4px);
+}
+.svc-card.active::before{opacity:1;}
+.svc-card.active .svc-icon{transform:scale(1.12);}
+.svc-card.active .svc-toggle{color:var(--blue);transform:rotate(45deg);}
+
+.svc-icon{display:inline-block;font-size:22px;margin-bottom:14px;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);}
+.svc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.svc-name{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--text);}
+.svc-toggle{color:var(--text3);font-size:18px;font-weight:300;line-height:1;transition:color 0.25s,transform 0.25s;flex-shrink:0;}
+.svc-desc{font-size:13px;color:var(--text2);line-height:1.65;}
+
+/* Expanded panel */
+.svc-expand{
+  display:none;
+  margin-top:16px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  animation:expandIn 0.28s cubic-bezier(0.22,1,0.36,1) both;
+}
+@keyframes expandIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+.svc-card.active .svc-expand{display:block;}
+
+.svc-bullets{display:flex;flex-direction:column;gap:7px;margin-bottom:16px;}
+.svc-bullet{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:rgba(228,230,240,0.60);line-height:1.5;}
+.svc-bullet::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0;margin-top:1px;font-size:11px;}
+.svc-tags-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+.svc-tag{font-size:11px;color:var(--blue);background:rgba(58,123,255,0.10);border:1px solid rgba(58,123,255,0.18);padding:3px 10px;border-radius:100px;}
+.svc-book-row{display:flex;justify-content:flex-end;}
+.svc-book-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--blue);color:#fff;
+  font-size:12px;font-weight:700;
+  padding:9px 18px;border-radius:100px;
+  text-decoration:none;
+  transition:all 0.22s ease;
+  box-shadow:0 4px 16px rgba(58,123,255,0.28);
+}
+.svc-book-btn:hover{filter:brightness(1.12);transform:translateY(-1px);box-shadow:0 6px 22px rgba(58,123,255,0.38);}
+
+/* ── WHAT'S INCLUDED ── */
+#included{padding:56px 0;background:var(--bg3);border-top:1px solid var(--border);}
+.included-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.inc-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:24px 22px;transition:transform 0.28s cubic-bezier(0.22,1,0.36,1),box-shadow 0.28s;}
+.inc-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.28);}
+.inc-icon{font-size:22px;margin-bottom:12px;}
+.inc-title{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:7px;}
+.inc-body{font-size:13px;color:var(--text2);line-height:1.7;}
+.inc-list{list-style:none;margin-top:11px;display:flex;flex-direction:column;gap:6px;}
+.inc-list li{font-size:12px;color:var(--text2);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.inc-list li::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0;margin-top:1px;}
+
+/* ── PROCESS ── */
+#process{padding:56px 0;background:var(--bg);border-top:1px solid var(--border);}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:8px;}
+.p-step{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:22px 16px;transition:all 0.25s cubic-bezier(0.22,1,0.36,1);}
+.p-step:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,0.30);border-color:rgba(58,123,255,0.20);}
+.p-num{font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;color:var(--blue);letter-spacing:0.13em;margin-bottom:12px;opacity:0.75;}
+.p-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.p-desc{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* ── CTA ── */
+#cta{padding:64px 0;background:#111118;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.06);}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:640px;height:420px;background:radial-gradient(ellipse,rgba(58,123,255,0.07) 0%,transparent 68%);pointer-events:none;}
+.cta-inner{position:relative;z-index:1;max-width:620px;}
+.cta-headline{font-family:'Outfit',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:800;letter-spacing:-0.03em;color:#e4e6f0;line-height:1.08;margin-bottom:12px;}
+.cta-headline span{color:#8da8cc;}
+.cta-sub{font-size:15px;color:rgba(228,230,240,0.50);line-height:1.70;margin-bottom:28px;max-width:460px;}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
+.trust-row{display:flex;flex-wrap:wrap;gap:16px;}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(228,230,240,0.30);}
+.trust-dot{width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+
+/* ── FOOTER ── */
+footer{background:var(--bg3);border-top:1px solid var(--border);padding:28px 0 20px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-brand{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--text);}
+.footer-brand span{color:var(--text3);}
+.footer-links{display:flex;gap:16px;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:var(--text3);transition:color 0.2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-copy{font-size:11px;color:var(--text3);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:920px){
+  .nav-links,.nav-ig{display:none;}
+  .hamburger{display:flex;}
+  .hero-inner{grid-template-columns:1fr;gap:32px;}
+  .hero-svc-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .page-sub{max-width:100%;}
+  .svc-grid{grid-template-columns:1fr 1fr;gap:10px;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:10px;}
+  .included-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .hero-svc-list{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr;}
+  .cta-btns{flex-direction:column;}
+  .cta-btns .btn{width:100%;justify-content:center;}
+}
+@media(max-width:440px){.container{padding:0 18px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/logo.png" alt="Jax Media Co" class="nav-logo"
+             onerror="this.outerHTML='<span style=\'font-family:Outfit,sans-serif;font-size:16px;font-weight:700;color:rgba(228,230,240,.9);\'>JaxMedia<span style=\'opacity:.45;\'>.co</span></span>'" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/landing-pages">Landing Pages</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener" class="nav-ig" style="display:inline-flex;align-items:center;gap:5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@jaxmedia_co</a>
+        <a href="/contact" class="btn btn-white" style="padding:9px 18px;font-size:13px;">Book a Call</a>
+      </div>
+      <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="/" class="mob-link">Home</a>
+  <a href="/services" class="mob-link">Services</a>
+  <a href="/results" class="mob-link">Results</a>
+  <a href="/landing-pages" class="mob-link">Landing Pages</a>
+  <a href="/contact" class="mob-link">Contact</a>
+  <a href="/contact" class="btn btn-blue mob-link" style="margin-top:12px;">Book a Call</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow-bg"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- LEFT: headline + subhead + CTA -->
+      <div class="hero-left">
+        <div class="page-tag">What I Do</div>
+        <h1 class="page-title">The Full Stack<br>for Local Growth</h1>
+        <p class="page-sub">More calls. More booked jobs. No agency needed.</p>
+        <a href="/contact" class="btn btn-white">Book a Free Call →</a>
+      </div>
+
+      <!-- RIGHT: 4 core service quick-list -->
+      <div class="hero-right">
+        <div class="hero-svc-list">
+          <div class="hsvc-card">
+            <div class="hsvc-top"><span class="hsvc-icon">🎬</span><span class="hsvc-name">Content Creation</span></div>
+            <div class="hsvc-desc">Stops the scroll. Builds trust. Gets you calls.</div>
+          </div>
+          <div class="hsvc-card">
+            <div class="hsvc-top"><span class="hsvc-icon">📊</span><span class="hsvc-name">Meta Ads</span></div>
+            <div class="hsvc-desc">Targeted campaigns that bring in booked jobs, not just clicks.</div>
+          </div>
+          <div class="hsvc-card">
+            <div class="hsvc-top"><span class="hsvc-icon">🌐</span><span class="hsvc-name">Landing Pages</span></div>
+            <div class="hsvc-desc">Built to convert. One job: get them to call.</div>
+          </div>
+          <div class="hsvc-card">
+            <div class="hsvc-top"><span class="hsvc-icon">✨</span><span class="hsvc-name">Branding</span></div>
+            <div class="hsvc-desc">Look established before they read a word.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE CARDS — click to expand, Book Now inside -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Services</span>
+      <h2 class="section-headline">Everything You Need to Grow</h2>
+      <p class="section-sub">Tap any service to expand it.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card reveal" data-key="content">
+        <div class="svc-icon">🎬</div>
+        <div class="svc-header">
+          <div class="svc-name">Content Creation</div>
+          <div class="svc-toggle">+</div>
+        </div>
+        <div class="svc-desc">I come to your location and shoot content that actually looks like your business — not stock footage.</div>
+        <div class="svc-expand">
+          <div class="svc-bullets">
+            <div class="svc-bullet">On-site shoot — I come to you</div>
+            <div class="svc-bullet">Video &amp; photo, edited and ready to post</div>
+            <div class="svc-bullet">Repurposed across all platforms</div>
+          </div>
+          <div class="svc-tags-row">
+            <span class="svc-tag">On-Site Filming</span>
+            <span class="svc-tag">Video Editing</span>
+            <span class="svc-tag">Photo Content</span>
+          </div>
+          <div class="svc-book-row">
+            <a href="/contact" class="svc-book-btn">Book Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card reveal d1" data-key="shortform">
+        <div class="svc-icon">⚡</div>
+        <div class="svc-header">
+          <div class="svc-name">Short Form Video</div>
+          <div class="svc-toggle">+</div>
+        </div>
+        <div class="svc-desc">The fastest way to get in front of new customers. I write the hooks, shoot it, edit it, and post it.</div>
+        <div class="svc-expand">
+          <div class="svc-bullets">
+            <div class="svc-bullet">Reels, TikTok &amp; YouTube Shorts</div>
+            <div class="svc-bullet">Hook writing included</div>
+            <div class="svc-bullet">Monthly packages available</div>
+          </div>
+          <div class="svc-tags-row">
+            <span class="svc-tag">Reels</span>
+            <span class="svc-tag">TikTok</span>
+            <span class="svc-tag">YT Shorts</span>
+          </div>
+          <div class="svc-book-row">
+            <a href="/contact" class="svc-book-btn">Book Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card reveal d2" data-key="ads">
+        <div class="svc-icon">📊</div>
+        <div class="svc-header">
+          <div class="svc-name">Meta Ads</div>
+          <div class="svc-toggle">+</div>
+        </div>
+        <div class="svc-desc">Targeted Facebook &amp; Instagram campaigns built to bring in calls — not just impressions.</div>
+        <div class="svc-expand">
+          <div class="svc-bullets">
+            <div class="svc-bullet">Campaign setup, targeting &amp; ad creative</div>
+            <div class="svc-bullet">Optimized for leads and booked jobs</div>
+            <div class="svc-bullet">Clear reporting every step of the way</div>
+          </div>
+          <div class="svc-tags-row">
+            <span class="svc-tag">Campaign Setup</span>
+            <span class="svc-tag">Targeting</span>
+            <span class="svc-tag">Optimization</span>
+          </div>
+          <div class="svc-book-row">
+            <a href="/contact" class="svc-book-btn">Book Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card reveal d1" data-key="landing">
+        <div class="svc-icon">🌐</div>
+        <div class="svc-header">
+          <div class="svc-name">Landing Pages</div>
+          <div class="svc-toggle">+</div>
+        </div>
+        <div class="svc-desc">One page. One goal: get the visitor to call or book. No distractions.</div>
+        <div class="svc-expand">
+          <div class="svc-bullets">
+            <div class="svc-bullet">Built around your specific offer</div>
+            <div class="svc-bullet">Mobile-first, loads fast</div>
+            <div class="svc-bullet">Forms, call buttons &amp; tracking included</div>
+          </div>
+          <div class="svc-tags-row">
+            <span class="svc-tag">Custom Design</span>
+            <span class="svc-tag">Mobile-First</span>
+            <span class="svc-tag">Lead Forms</span>
+          </div>
+          <div class="svc-book-row">
+            <a href="/contact" class="svc-book-btn">Book Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card reveal d2" data-key="branding">
+        <div class="svc-icon">✨</div>
+        <div class="svc-header">
+          <div class="svc-name">Branding</div>
+          <div class="svc-toggle">+</div>
+        </div>
+        <div class="svc-desc">Look established and trustworthy before a customer reads a single word.</div>
+        <div class="svc-expand">
+          <div class="svc-bullets">
+            <div class="svc-bullet">Logo, colors &amp; typography</div>
+            <div class="svc-bullet">Brand guidelines for consistency</div>
+            <div class="svc-bullet">Social kit &amp; print-ready files</div>
+          </div>
+          <div class="svc-tags-row">
+            <span class="svc-tag">Logo Design</span>
+            <span class="svc-tag">Color System</span>
+            <span class="svc-tag">Guidelines</span>
+          </div>
+          <div class="svc-book-row">
+            <a href="/contact" class="svc-book-btn">Book Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card reveal d3" data-key="social">
+        <div class="svc-icon">📱</div>
+        <div class="svc-header">
+          <div class="svc-name">Social Strategy</div>
+          <div class="svc-toggle">+</div>
+        </div>
+        <div class="svc-desc">A real content plan — not just "post more." Built around your business and your market.</div>
+        <div class="svc-expand">
+          <div class="svc-bullets">
+            <div class="svc-bullet">Profile audit &amp; optimization</div>
+            <div class="svc-bullet">Monthly content calendar with hooks</div>
+            <div class="svc-bullet">Growth strategy for your market</div>
+          </div>
+          <div class="svc-tags-row">
+            <span class="svc-tag">Content Calendar</span>
+            <span class="svc-tag">Profile Audit</span>
+            <span class="svc-tag">Analytics</span>
+          </div>
+          <div class="svc-book-row">
+            <a href="/contact" class="svc-book-btn">Book Now →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section id="included">
+  <div class="container">
+    <span class="tag reveal">Every Project</span>
+    <h2 class="section-headline reveal d1" style="margin-bottom:6px;">What You Get</h2>
+    <p class="section-sub reveal d2" style="margin-bottom:24px;">Every project, regardless of service.</p>
+    <div class="included-grid">
+      <div class="inc-card reveal">
+        <div class="inc-icon">🎯</div>
+        <div class="inc-title">Strategy First</div>
+        <div class="inc-body">We talk first. I learn your business before touching anything.</div>
+        <ul class="inc-list">
+          <li>Discovery call</li>
+          <li>Local market research</li>
+          <li>Strategy built around your budget</li>
+        </ul>
+      </div>
+      <div class="inc-card reveal d1">
+        <div class="inc-icon">📍</div>
+        <div class="inc-title">Flexible Content Workflow</div>
+        <div class="inc-body">Built around your business — whether I'm filming on-site or working with content you already have.</div>
+        <ul class="inc-list">
+          <li>On-site filming when needed</li>
+          <li>Can work with your existing photos &amp; videos</li>
+          <li>Built to scale around your goals</li>
+        </ul>
+      </div>
+      <div class="inc-card reveal d2">
+        <div class="inc-icon">📊</div>
+        <div class="inc-title">Transparent Reporting</div>
+        <div class="inc-body">You always know what your money is doing.</div>
+        <ul class="inc-list">
+          <li>Regular performance updates</li>
+          <li>Reach, clicks, leads, cost — clearly reported</li>
+          <li>Honest feedback, no spin</li>
+        </ul>
+      </div>
+      <div class="inc-card reveal d3">
+        <div class="inc-icon">⚡</div>
+        <div class="inc-title">Fast Turnaround</div>
+        <div class="inc-body">Your business can't wait weeks. I don't make you.</div>
+        <ul class="inc-list">
+          <li>First deliverables within days</li>
+          <li>Ads live within the first week</li>
+          <li>Quick revisions, no back-and-forth</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <span class="tag reveal">Process</span>
+    <h2 class="section-headline reveal d1" style="margin-bottom:6px;">How It Works</h2>
+    <p class="section-sub reveal d2" style="margin-bottom:22px;">No complicated onboarding. No agency runaround.</p>
+    <div class="process-steps reveal d2">
+      <div class="p-step">
+        <div class="p-num">01</div>
+        <div class="p-name">Understand the Business</div>
+        <div class="p-desc">We talk. I learn your business and what's not working.</div>
+      </div>
+      <div class="p-step">
+        <div class="p-num">02</div>
+        <div class="p-name">Build the Foundation</div>
+        <div class="p-desc">Profiles polished. Landing page ready. Foundation set.</div>
+      </div>
+      <div class="p-step">
+        <div class="p-num">03</div>
+        <div class="p-name">Create &amp; Launch</div>
+        <div class="p-desc">I show up, film, edit, and go live. Real content, real campaigns.</div>
+      </div>
+      <div class="p-step">
+        <div class="p-num">04</div>
+        <div class="p-name">Drive Traffic</div>
+        <div class="p-desc">Ads running. Right people, right time, right area.</div>
+      </div>
+      <div class="p-step">
+        <div class="p-num">05</div>
+        <div class="p-name">Scale What Works</div>
+        <div class="p-desc">Double down on what works. Cut what doesn't.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <div class="container">
+    <div class="cta-inner">
+      <span class="tag reveal" style="background:rgba(255,255,255,0.04);">Ready to Start?</span>
+      <h2 class="cta-headline reveal d1">Let's get your business<br><span>more customers.</span></h2>
+      <p class="cta-sub reveal d2">Free call. No pitch. I'll tell you exactly what I'd do and what it costs.</p>
+      <div class="cta-btns reveal d3">
+        <a href="/contact" class="btn btn-blue">Book a Free Call</a>
+        <a href="/results" class="btn btn-outline">See Results First</a>
+      </div>
+      <div class="trust-row reveal d4">
+        <div class="trust-item"><div class="trust-dot"></div>No long-term contracts</div>
+        <div class="trust-item"><div class="trust-dot"></div>Fast turnaround</div>
+        <div class="trust-item"><div class="trust-dot"></div>On-site available</div>
+        <div class="trust-item"><div class="trust-dot"></div>Real data, real results</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">JaxMedia<span>.co</span></div>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/landing-pages">Landing Pages</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 Jax Media Co.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 50), { passive: true });
+
+// Mobile nav
+const ham = document.getElementById('ham');
+const mobNav = document.getElementById('mobNav');
+ham.addEventListener('click', () => mobNav.classList.add('open'));
+document.getElementById('mobClose').addEventListener('click', () => mobNav.classList.remove('open'));
+document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobNav.classList.remove('open')));
+
+// Reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Active nav
+const path = window.location.pathname.replace(/\/$/, '') || '/';
+document.querySelectorAll('.nav-links a').forEach(a => {
+  if ((a.getAttribute('href') || '').replace(/\/$/, '') === path) a.classList.add('active');
+});
+
+// ── SERVICE CARD EXPAND ──
+// Clicking a card toggles expanded state. Book Now button navigates to /contact.
+// No redirect happens from clicking the card itself.
+document.querySelectorAll('.svc-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    // If the click was on the Book Now button or its children, let it navigate normally
+    if (e.target.closest('.svc-book-btn')) return;
+
+    const isActive = this.classList.contains('active');
+
+    // Collapse all cards
+    document.querySelectorAll('.svc-card').forEach(c => {
+      c.classList.remove('active');
+      c.querySelector('.svc-toggle').textContent = '+';
+    });
+
+    // Expand this card if it wasn't already open
+    if (!isActive) {
+      this.classList.add('active');
+      this.querySelector('.svc-toggle').textContent = '×';
+    }
+  });
+});
+</script>
+</body>
+</html>

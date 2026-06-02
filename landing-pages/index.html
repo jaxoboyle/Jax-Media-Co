@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Landing Pages Portfolio — Jax Media Co</title>
+<meta name="description" content="Landing pages built by Jax Media Co for local businesses. Conversion-focused, mobile-first pages designed to turn ad clicks into booked jobs and calls." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#1c1c24;color:#e4e6f0;overflow-x:hidden;line-height:1.6;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;}
+:root{
+  --bg:#1c1c24;--bg2:#21212b;--bg3:#191920;--bg4:#2a2a36;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);
+  --text:#e4e6f0;--text2:rgba(228,230,240,0.58);--text3:rgba(228,230,240,0.28);
+  --silver:#8090aa;--blue:#3a7bff;--r:14px;--r2:20px;
+}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg3);}
+::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:2px;}
+.container{max-width:1120px;margin:0 auto;padding:0 28px;}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);background:var(--bg4);border:1px solid var(--border2);padding:5px 14px;border-radius:100px;margin-bottom:18px;}
+.tag-dark{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);color:rgba(228,230,240,0.50);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all 0.3s ease;white-space:nowrap;text-decoration:none;}
+.btn-white{background:#e4e6f0;color:#111118;}
+.btn-white:hover{background:#f0f2ff;transform:translateY(-2px);box-shadow:0 8px 28px rgba(228,230,240,0.18);}
+.btn-outline{background:transparent;color:rgba(228,230,240,0.68);border:1px solid rgba(255,255,255,0.20);}
+.btn-outline:hover{color:#e4e6f0;border-color:rgba(255,255,255,0.38);background:rgba(255,255,255,0.07);transform:translateY(-1px);}
+.btn-blue{background:var(--blue);color:#fff;animation:btnPulse 3s ease-in-out infinite;}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(58,123,255,0.38);filter:brightness(1.1);animation:none;}
+.btn-sm{padding:9px 18px;font-size:13px;}
+@keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(58,123,255,0);}50%{box-shadow:0 0 0 10px rgba(58,123,255,0.14);}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal.d1{transition-delay:0.08s;}.reveal.d2{transition-delay:0.16s;}.reveal.d3{transition-delay:0.24s;}.reveal.d4{transition-delay:0.32s;}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:20px 0;transition:all 0.35s ease;}
+#nav .nav-brand{color:rgba(228,230,240,0.92);}
+#nav .nav-links a{color:rgba(228,230,240,0.60);}
+#nav .nav-links a:hover,#nav .nav-links a.active{color:#e4e6f0;background:rgba(255,255,255,0.08);}
+#nav .hamburger span{background:rgba(228,230,240,0.78);}
+#nav .btn-white{background:rgba(255,255,255,0.12);color:#e4e6f0;border:1px solid rgba(255,255,255,0.22);}
+#nav .btn-white:hover{background:rgba(255,255,255,0.22);}
+#nav.solid{background:rgba(25,25,32,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.08);padding:13px 0;}
+#nav.solid .nav-links a{color:rgba(228,230,240,0.60);}
+#nav.solid .nav-links a:hover,#nav.solid .nav-links a.active{color:#e4e6f0;background:rgba(255,255,255,0.07);}
+#nav.solid .hamburger span{background:rgba(228,230,240,0.70);}
+#nav.solid .btn-white{background:rgba(255,255,255,0.10);color:#e4e6f0;border:1px solid rgba(255,255,255,0.18);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.nav-brand{display:flex;align-items:center;}
+.nav-logo{height:34px;width:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;padding:7px 14px;border-radius:100px;transition:all 0.2s;}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-ig{font-size:13px;font-weight:500;padding:7px 14px;border-radius:100px;transition:all 0.2s;border:1px solid transparent;color:rgba(228,230,240,0.60);}
+.nav-ig:hover{color:#e4e6f0;border-color:rgba(255,255,255,0.32);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:1.5px;border-radius:1px;transition:all 0.3s;}
+.mob-nav{display:none;position:fixed;inset:0;z-index:899;background:rgba(22,22,30,0.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:16px;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:#e4e6f0;transition:color 0.2s;}
+.mob-nav a:hover{color:var(--blue);}
+.mob-close{position:absolute;top:22px;right:24px;background:none;border:none;color:rgba(228,230,240,0.38);font-size:24px;cursor:pointer;}
+
+/* PAGE HERO */
+.page-hero{background:#111118;padding:140px 0 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,#1c1c24);pointer-events:none;}
+.hero-grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.028) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 80% at 50% 40%,black 20%,transparent 100%);}
+.hero-glow-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(58,123,255,0.07) 0%,transparent 70%);pointer-events:none;}
+.page-hero .container{position:relative;z-index:2;}
+.page-title{font-family:'Outfit',sans-serif;font-size:clamp(32px,5vw,60px);font-weight:800;letter-spacing:-0.03em;color:var(--text);line-height:1.1;margin-bottom:14px;}
+.page-sub{font-size:clamp(15px,2vw,17px);color:var(--text2);max-width:520px;line-height:1.7;margin-bottom:28px;}
+
+/* PORTFOLIO */
+#portfolio{padding:96px 0;background:var(--bg);}
+.section-headline{font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,48px);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:10px;}
+.section-sub{font-size:15px;color:var(--text2);margin-bottom:48px;}
+.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+
+/* Portfolio card */
+.lp-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:transform 0.35s cubic-bezier(0.22,1,0.36,1),box-shadow 0.35s;}
+.lp-card:hover{transform:translateY(-4px);box-shadow:0 20px 56px rgba(0,0,0,0.40);border-color:rgba(58,123,255,0.20);}
+.lp-card-body{padding:24px 26px 28px;}
+
+/* Browser frame */
+.browser-frame{
+  border-radius:var(--r2) var(--r2) 0 0;
+  overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  box-shadow:inset 0 -1px 0 rgba(255,255,255,0.06);
+}
+.browser-chrome{
+  background:#252532;
+  padding:9px 14px;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  flex-shrink:0;
+}
+.browser-dots{display:flex;gap:5px;flex-shrink:0;}
+.browser-dots span{width:10px;height:10px;border-radius:50%;display:block;}
+.browser-dots .rd{background:#ff5f57;}
+.browser-dots .yw{background:#febc2e;}
+.browser-dots .gn{background:#28c840;}
+.browser-url-bar{
+  flex:1;min-width:0;
+  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.10);
+  border-radius:6px;padding:4px 11px;
+  display:flex;align-items:center;gap:6px;
+  font-size:11.5px;color:rgba(228,230,240,0.50);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow:hidden;
+}
+.browser-url-bar svg{flex-shrink:0;opacity:0.60;}
+.browser-url-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.browser-viewport{
+  position:relative;
+  height:500px;
+  overflow:hidden;
+  background:#f0f0f0;
+}
+.browser-iframe{
+  width:100%;height:100%;
+  border:none;display:block;
+  background:transparent;
+}
+/* Fallback — shown when iframe is blocked */
+.iframe-fallback{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:32px 24px;
+  pointer-events:none;opacity:0;transition:opacity 0.3s;
+}
+.iframe-fallback.show{opacity:1;pointer-events:auto;}
+.ifb-icon{font-size:32px;margin-bottom:14px;opacity:0.40;}
+.ifb-msg{font-size:13px;color:rgba(228,230,240,0.42);line-height:1.6;margin-bottom:16px;}
+.ifb-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--blue);color:#fff;
+  font-size:13px;font-weight:700;
+  padding:10px 20px;border-radius:100px;
+  text-decoration:none;transition:all 0.2s ease;
+  pointer-events:auto;
+}
+.ifb-btn:hover{filter:brightness(1.12);transform:translateY(-1px);}
+/* Fallback background gradients per card */
+.ifb-diesel{background:linear-gradient(135deg,#0d1117 0%,#111827 50%,#1a2035 100%);}
+.ifb-jgm  {background:linear-gradient(135deg,#0f1a14 0%,#131f16 50%,#1a2a1e 100%);}
+.lp-preview-placeholder{background:linear-gradient(135deg,#111118 0%,#1a1a28 50%,#16161e 100%);}
+.lp-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.10em;color:var(--blue);margin-bottom:8px;}
+.lp-title{font-family:'Outfit',sans-serif;font-size:19px;font-weight:800;color:var(--text);margin-bottom:8px;letter-spacing:-0.01em;}
+.lp-desc{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:16px;}
+.lp-stats{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:20px;}
+.lp-stat{display:flex;flex-direction:column;gap:2px;}
+.lp-stat-num{font-family:'Outfit',sans-serif;font-size:17px;font-weight:800;color:var(--text);letter-spacing:-0.02em;}
+.lp-stat-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;}
+.lp-features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px;}
+.lp-feat{font-size:11px;color:var(--text2);background:var(--bg4);border:1px solid var(--border);padding:4px 10px;border-radius:100px;}
+.lp-cta{display:flex;gap:10px;flex-wrap:wrap;}
+
+/* Placeholder card */
+.lp-card.placeholder{border-style:dashed;border-color:rgba(255,255,255,0.12);}
+.lp-card.placeholder:hover{border-color:rgba(58,123,255,0.30);box-shadow:0 16px 48px rgba(0,0,0,0.30);}
+.placeholder-icon{font-size:32px;opacity:0.30;}
+.placeholder-text{font-size:13px;color:var(--text3);margin-top:8px;}
+
+/* WHAT GOES INTO A PAGE */
+#what{padding:96px 0;background:var(--bg3);border-top:1px solid var(--border);}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.what-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:26px 22px;transition:transform 0.3s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s;}
+.what-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.30);}
+.what-icon{font-size:22px;margin-bottom:14px;}
+.what-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:7px;}
+.what-desc{font-size:13px;color:var(--text2);line-height:1.65;}
+
+/* CTA */
+#cta{padding:96px 0;background:#111118;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.06);}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(58,123,255,0.08) 0%,transparent 70%);pointer-events:none;}
+.cta-inner{position:relative;z-index:1;max-width:680px;}
+.cta-headline{font-family:'Outfit',sans-serif;font-size:clamp(32px,5vw,60px);font-weight:800;letter-spacing:-0.03em;color:#e4e6f0;line-height:1.08;margin-bottom:16px;}
+.cta-headline span{color:#a8b8d8;}
+.cta-sub{font-size:16px;color:rgba(228,230,240,0.50);line-height:1.7;margin-bottom:34px;max-width:480px;}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
+.trust-row{display:flex;flex-wrap:wrap;gap:20px;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(228,230,240,0.35);}
+.trust-icon{font-size:13px;color:var(--blue);}
+
+/* FOOTER */
+footer{background:var(--bg3);border-top:1px solid var(--border);padding:36px 0 24px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+.footer-brand{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--text);}
+.footer-brand span{color:var(--text3);}
+.footer-links{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-size:13px;color:var(--text3);transition:color 0.2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-copy{font-size:12px;color:var(--text3);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .portfolio-grid{grid-template-columns:1fr;}
+  .what-grid{grid-template-columns:1fr 1fr;gap:12px;}
+  .nav-links,.nav-ig{display:none;}
+  .hamburger{display:flex;}
+  .browser-viewport{height:420px;}
+}
+@media(max-width:640px){
+  .what-grid{grid-template-columns:1fr;}
+  .browser-viewport{height:360px;}
+  .lp-cta{flex-direction:column;}
+  .lp-cta .btn{justify-content:center;}
+  .cta-btns{flex-direction:column;}
+  .cta-btns .btn{justify-content:center;}
+}
+@media(max-width:480px){.container{padding:0 20px;}.browser-viewport{height:300px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/logo.png" alt="Jax Media Co" class="nav-logo"
+             onerror="this.outerHTML='<span style=\'font-family:Outfit,sans-serif;font-size:16px;font-weight:700;color:rgba(228,230,240,.92);\'>JaxMedia<span style=\'opacity:.45;font-weight:600;\'>.co</span></span>'" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/landing-pages">Landing Pages</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener" class="nav-ig" style="display:inline-flex;align-items:center;gap:5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@jaxmedia_co</a>
+        <a href="/contact" class="btn btn-white" style="padding:9px 20px;font-size:13px;">Book a Call</a>
+      </div>
+      <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="/" class="mob-link">Home</a>
+  <a href="/services" class="mob-link">Services</a>
+  <a href="/results" class="mob-link">Results</a>
+  <a href="/landing-pages" class="mob-link">Landing Pages</a>
+  <a href="/contact" class="mob-link">Contact</a>
+  <a href="/contact" class="btn btn-blue mob-link" style="margin-top:10px;">Book a Call</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow-bg"></div>
+  <div class="container">
+    <span class="tag">Portfolio</span>
+    <h1 class="page-title">Landing Pages<br>That Convert</h1>
+    <p class="page-sub">Every landing page I build has one job — turn the visitor into a lead, a call, or a booked appointment. Here's what that looks like in practice.</p>
+    <a href="/contact" class="btn btn-white">Get a Landing Page Built</a>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <span class="tag reveal">Built Pages</span>
+    <h2 class="section-headline reveal d1">Pages We've Built</h2>
+    <p class="section-sub reveal d2">Custom-built, mobile-first landing pages designed around the specific offer, audience, and ad campaign they're paired with.</p>
+
+    <div class="portfolio-grid">
+
+      <!-- Modern Diesel -->
+      <div class="lp-card reveal">
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div class="browser-dots"><span class="rd"></span><span class="yw"></span><span class="gn"></span></div>
+            <div class="browser-url-bar">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V7a4 4 0 018 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span class="browser-url-text">moderndieselfl.com</span>
+            </div>
+          </div>
+          <div class="browser-viewport">
+            <iframe
+              id="iframe-diesel"
+              src="https://moderndieselfl.com/"
+              class="browser-iframe"
+              title="Modern Diesel & Performance landing page"
+              loading="lazy"
+              allow="autoplay"
+            ></iframe>
+            <div class="iframe-fallback ifb-diesel" id="fallback-diesel">
+              <div class="ifb-icon">🔧</div>
+              <p class="ifb-msg">Preview couldn't load inline.<br>Click below to view the full page.</p>
+              <a href="https://moderndieselfl.com/" target="_blank" rel="noopener" class="ifb-btn">
+                View Full Page →
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card-body">
+          <div class="lp-tag">Lead Generation</div>
+          <h2 class="lp-title">Modern Diesel &amp; Performance</h2>
+          <p class="lp-desc">Built to convert diesel truck owners looking for performance upgrades and service appointments. Paired with a Meta lead gen campaign — resulted in 7 booked leads in 10 days at $3.73 per lead.</p>
+          <div class="lp-stats">
+            <div class="lp-stat"><div class="lp-stat-num">7</div><div class="lp-stat-label">Booked Leads</div></div>
+            <div class="lp-stat"><div class="lp-stat-num">$3.73</div><div class="lp-stat-label">Cost Per Lead</div></div>
+            <div class="lp-stat"><div class="lp-stat-num">381</div><div class="lp-stat-label">Page Views</div></div>
+          </div>
+          <div class="lp-features">
+            <span class="lp-feat">Mobile-First</span>
+            <span class="lp-feat">Lead Form</span>
+            <span class="lp-feat">Fast Loading</span>
+            <span class="lp-feat">Custom Design</span>
+            <span class="lp-feat">Meta Pixel</span>
+          </div>
+          <div class="lp-cta">
+            <a href="/results" class="btn btn-white btn-sm">See Full Results</a>
+            <a href="https://moderndieselfl.com/" target="_blank" rel="noopener" class="btn btn-outline btn-sm">View Full Page ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- JGM Contracting -->
+      <div class="lp-card reveal d1">
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div class="browser-dots"><span class="rd"></span><span class="yw"></span><span class="gn"></span></div>
+            <div class="browser-url-bar">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V7a4 4 0 018 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span class="browser-url-text">jgm-contracting.com</span>
+            </div>
+          </div>
+          <div class="browser-viewport">
+            <iframe
+              id="iframe-jgm"
+              src="https://jgm-contracting.vercel.app/"
+              class="browser-iframe"
+              title="JGM Contracting landing page"
+              loading="lazy"
+              allow="autoplay"
+            ></iframe>
+            <div class="iframe-fallback ifb-jgm" id="fallback-jgm">
+              <div class="ifb-icon">🏗️</div>
+              <p class="ifb-msg">Preview couldn't load inline.<br>Click below to view the full page.</p>
+              <a href="https://jgm-contracting.vercel.app/" target="_blank" rel="noopener" class="ifb-btn">
+                View Full Page →
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card-body">
+          <div class="lp-tag">Service Business</div>
+          <h2 class="lp-title">JGM Contracting</h2>
+          <p class="lp-desc">Custom landing page built for a local contracting business. Designed to convert ad traffic into calls and quote requests — mobile-first, fast-loading, and built around the offer.</p>
+          <div class="lp-features">
+            <span class="lp-feat">Mobile-First</span>
+            <span class="lp-feat">Call-to-Action</span>
+            <span class="lp-feat">Fast Loading</span>
+            <span class="lp-feat">Custom Design</span>
+            <span class="lp-feat">Quote Form</span>
+          </div>
+          <div class="lp-cta">
+            <a href="https://jgm-contracting.vercel.app/" target="_blank" rel="noopener" class="btn btn-white btn-sm">View Full Page ↗</a>
+            <a href="/contact" class="btn btn-outline btn-sm">Build Mine</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder -->
+      <div class="lp-card placeholder reveal d2" style="grid-column:1/-1;">
+        <div class="lp-preview lp-preview-placeholder" style="height:140px;">
+          <div style="text-align:center;">
+            <div class="placeholder-icon">🚀</div>
+            <div class="placeholder-text">Your Business Here</div>
+          </div>
+        </div>
+        <div class="lp-card-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+          <div>
+            <div class="lp-tag">Your Project</div>
+            <h2 class="lp-title" style="font-size:17px;">Need a landing page for your business?</h2>
+            <p class="lp-desc" style="margin-bottom:0;">I'll build a custom, conversion-focused page tailored to your offer and your audience. Fast turnaround, no templates, no cookie-cutter designs.</p>
+          </div>
+          <a href="/contact" class="btn btn-blue" style="flex-shrink:0;animation:btnPulse 3s ease-in-out infinite;">Get Started →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT GOES INTO A PAGE -->
+<section id="what">
+  <div class="container">
+    <span class="tag reveal">Every Page Includes</span>
+    <h2 class="section-headline reveal d1">What Goes Into Each Build</h2>
+    <p class="section-sub reveal d2">No page templates. No drag-and-drop builders. Every page is custom-built to match your offer and audience.</p>
+    <div class="what-grid">
+      <div class="what-card reveal">
+        <div class="what-icon">📱</div>
+        <div class="what-title">Mobile-First Design</div>
+        <div class="what-desc">Most of your ad traffic is on mobile. Every page is designed for phones first, then scaled up for desktop.</div>
+      </div>
+      <div class="what-card reveal d1">
+        <div class="what-icon">⚡</div>
+        <div class="what-title">Fast Load Speed</div>
+        <div class="what-desc">Slow pages kill conversions. Pages are hand-coded and optimized to load quickly on any connection.</div>
+      </div>
+      <div class="what-card reveal d2">
+        <div class="what-icon">🎯</div>
+        <div class="what-title">One Clear Goal</div>
+        <div class="what-desc">Each page is built around a single action — a call, a form, or a booking. No distractions, no navigation away.</div>
+      </div>
+      <div class="what-card reveal d3">
+        <div class="what-icon">📊</div>
+        <div class="what-title">Tracking Built In</div>
+        <div class="what-desc">Meta Pixel, conversion events, and form tracking so you always know what's working in your ad campaign.</div>
+      </div>
+      <div class="what-card reveal">
+        <div class="what-icon">🎨</div>
+        <div class="what-title">On-Brand Design</div>
+        <div class="what-desc">Colors, fonts, and copy that match your brand and feel consistent with the ads that sent people to the page.</div>
+      </div>
+      <div class="what-card reveal d1">
+        <div class="what-icon">🔄</div>
+        <div class="what-title">Revisions Included</div>
+        <div class="what-desc">You get revisions until the page is right. I don't disappear after the first draft.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <div class="container">
+    <div class="cta-inner">
+      <span class="tag tag-dark reveal">Let's Build</span>
+      <h2 class="cta-headline reveal d1">Ready for a Page<br><span>That Actually Converts?</span></h2>
+      <p class="cta-sub reveal d2">Tell me about your business and your offer. I'll build a page that sends your ad traffic somewhere worth going.</p>
+      <div class="cta-btns reveal d3">
+        <a href="/contact" class="btn btn-blue">Book a Free Call</a>
+        <a href="/results" class="btn btn-outline">See Campaign Results</a>
+      </div>
+      <div class="trust-row reveal d4">
+        <div class="trust-item"><span class="trust-icon">✓</span> Custom builds only — no templates</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> Fast turnaround</div>
+        <div class="trust-item"><span class="trust-icon">✓</span> Revisions included</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">JaxMedia<span>.co</span></div>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/results">Results</a></li>
+        <li><a href="/landing-pages">Landing Pages</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="https://instagram.com/jaxmedia_co" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 Jax Media Co.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60), { passive: true });
+const ham = document.getElementById('ham');
+const mobNav = document.getElementById('mobNav');
+ham.addEventListener('click', () => mobNav.classList.add('open'));
+document.getElementById('mobClose').addEventListener('click', () => mobNav.classList.remove('open'));
+document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobNav.classList.remove('open')));
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.10 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+const path = window.location.pathname.replace(/\/$/, '') || '/';
+document.querySelectorAll('.nav-links a').forEach(a => {
+  const href = (a.getAttribute('href') || '').replace(/\/$/, '') || '/';
+  if (href === path) a.classList.add('active');
+});
+
+// Iframe fallback detection
+// If the iframe loaded but was blocked by X-Frame-Options, the browser shows
+// an empty same-origin document — we can detect this and show the fallback card.
+function checkIframe(iframeId, fallbackId) {
+  const iframe  = document.getElementById(iframeId);
+  const fallback = document.getElementById(fallbackId);
+  if (!iframe || !fallback) return;
+
+  iframe.addEventListener('load', function() {
+    try {
+      // Accessing contentDocument on a successfully-loaded cross-origin iframe
+      // throws a SecurityError — that means the page loaded fine.
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      // If we reach here without throwing, we can read the doc.
+      // An X-Frame-Options block results in an empty document.
+      const isEmpty = !doc || !doc.body || doc.body.innerHTML.trim().length < 50;
+      if (isEmpty) fallback.classList.add('show');
+    } catch (e) {
+      // SecurityError = cross-origin page loaded successfully — no fallback needed.
+    }
+  });
+
+  // Timeout safety net: if nothing loads in 8s, show fallback
+  setTimeout(function() {
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || !doc.body || doc.body.innerHTML.trim().length < 50) {
+        fallback.classList.add('show');
+      }
+    } catch(e) { /* loaded fine cross-origin */ }
+  }, 8000);
+}
+
+checkIframe('iframe-diesel',  'fallback-diesel');
+checkIframe('iframe-jgm',     'fallback-jgm');
+</script>
+</body>
+</html>
