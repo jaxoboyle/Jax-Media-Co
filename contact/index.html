@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -294,6 +295,8 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   if (href === path) a.classList.add('active');
 });
 
+emailjs.init('rvS3FaCS4uUb3G3EX');
+
 async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
@@ -310,11 +313,13 @@ async function handleSubmit(e) {
   btn.disabled = true;
   btn.style.animation = 'none';
   try {
-    const res = await fetch(
+    // Send email notification via EmailJS
+    await emailjs.send('service_u1hy1jk', 'template_9ihzo49', payload);
+    // Also send to GHL webhook
+    fetch(
       'https://services.leadconnectorhq.com/hooks/1A4yMzkxVWwaedd8Ja4F/webhook-trigger/ea431563-8a76-4d96-add0-643f3725f813',
       { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }
-    );
-    if (!res.ok) throw new Error('Server error');
+    ).catch(() => {});
     btn.textContent      = "Sent! I'll be in touch soon.";
     btn.style.background = '#2a9d5c';
   } catch (err) {
