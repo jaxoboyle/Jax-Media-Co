@@ -119,18 +119,40 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:36px 0 2
 .footer-copy{font-size:12px;color:var(--text3);}
 
 /* RESPONSIVE */
+
+/* ─── MOBILE OPTIMIZATIONS ─── */
 @media(max-width:900px){
-  .booking-grid{grid-template-columns:1fr;}
-  .booking-info{position:static;}
   .nav-links,.nav-ig{display:none;}
   .hamburger{display:flex;}
+  .booking-grid{grid-template-columns:1fr;}
+  .booking-info{position:static;}
+}
+@media(max-width:768px){
+  .page-hero{padding:100px 0 44px;}
+  .page-title{font-size:clamp(26px,7vw,42px);}
+  .page-sub{max-width:100%;}
+  #booking{padding:44px 0 56px;}
+  .booking-form-wrap{padding:24px 20px;}
+  .form-input,.form-textarea,.form-select{font-size:16px;padding:13px 14px;}
+  .form-submit{font-size:15px;padding:15px 20px;min-height:52px;}
+  footer{padding:20px 0 16px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;}
+  .footer-links{gap:12px;}
 }
 @media(max-width:640px){
   .form-row{grid-template-columns:1fr;}
-  .check-grid{grid-template-columns:1fr;}
-  .booking-form-wrap{padding:24px 20px;}
+  .page-hero{padding:90px 0 36px;}
+  .container{padding:0 18px;}
+  .booking-info-card{padding:18px 16px;}
 }
-@media(max-width:480px){.container{padding:0 20px;}}
+@media(max-width:480px){
+  .container{padding:0 16px;}
+  .booking-form-wrap{padding:20px 16px;}
+}
+@media(hover:none){
+  .booking-info-card:hover{transform:none;box-shadow:none;}
+  .form-submit{animation:none;}
+}
 </style>
 </head>
 <body>

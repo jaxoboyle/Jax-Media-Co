@@ -244,12 +244,41 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:32px 0 2
   .hero-stat-strip{grid-template-columns:1fr;max-width:100%;}
   .hss-divider{height:1px;width:100%;}
 }
-@media(max-width:560px){
-  .hss-campaign{padding:16px 20px;}
-  .cta-btns{flex-direction:column;}
-  .cta-btns .btn{justify-content:center;}
+
+
+/* ─── MOBILE OPTIMIZATIONS ─── */
+@media(max-width:900px){
+  .nav-links,.nav-ig{display:none;}
+  .hamburger{display:flex;}
 }
-@media(max-width:440px){.container{padding:0 18px;}}
+@media(max-width:768px){
+  .page-hero{padding:100px 0 40px;}
+  .page-sub{max-width:100%;}
+  .hero-stat-strip{grid-template-columns:1fr 1fr;max-width:100%;gap:1px;}
+  #case-studies{padding:44px 0;}
+  .section-sub{max-width:100%;}
+  .jmc-am{padding:20px 16px;}
+  .jmc-am .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .jmc-am table{min-width:560px;}
+  #cta{padding:44px 0;}
+  .cta-inner{max-width:100%;}
+  .cta-sub{max-width:100%;}
+  .cta-btns{flex-direction:column;}
+  .cta-btns .btn{width:100%;justify-content:center;}
+  footer{padding:20px 0 16px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;}
+  .footer-links{gap:12px;}
+}
+@media(max-width:560px){
+  .page-hero{padding:88px 0 32px;}
+  .hero-stat-strip{grid-template-columns:1fr;}
+  .container{padding:0 18px;}
+  .jmc-am .titlebar,.jmc-am .toolbar{flex-wrap:wrap;gap:6px;}
+}
+@media(max-width:440px){.container{padding:0 14px;}}
+@media(hover:none){
+  .btn-blue{animation:none;}
+}
 </style>
 </head>
 <body>
