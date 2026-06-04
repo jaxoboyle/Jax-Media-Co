@@ -301,8 +301,10 @@ async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const btn  = form.querySelector('.form-submit');
+  const nameVal = document.getElementById('f_name').value.trim();
   const payload = {
-    name:          document.getElementById('f_name').value.trim(),
+    name:          nameVal,
+    title:         nameVal,
     phone:         document.getElementById('f_phone').value.trim(),
     business_name: document.getElementById('f_business').value.trim(),
     service:       document.getElementById('f_service').value,
