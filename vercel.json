@@ -1,10 +1,13 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.jaxmediaco.com" }],
+      "destination": "https://jaxmediaco.com/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/services",      "destination": "/services/index.html" },
-    { "source": "/results",       "destination": "/results/index.html" },
-    { "source": "/landing-pages", "destination": "/landing-pages/index.html" },
-    { "source": "/contact",       "destination": "/contact/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
