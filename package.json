@@ -1,0 +1,8 @@
+{
+  "name": "jax-media-co-website",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "resend": "^6.18.1"
+  }
+}
