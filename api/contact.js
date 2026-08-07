@@ -1,7 +1,11 @@
 const { Resend } = require('resend');
 
-const TO_EMAIL = 'jqoboyle@gmail.com';
-const FROM_EMAIL = 'Jax Media Co Website <onboarding@resend.dev>';
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'jqoboyle@gmail.com';
+// Falls back to Resend's shared sandbox sender, which works with no domain
+// verification. Once a custom domain is verified in Resend, set
+// RESEND_FROM_EMAIL (e.g. "Jax Media Co <notifications@jaxmediaco.com>")
+// as a Vercel env var — no code change or redeploy needed.
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Jax Media Co Website <onboarding@resend.dev>';
 
 // Best-effort in-memory guards. These reset on cold start and are per-instance
 // only (no shared store), so they're a supplement to client-side debouncing
